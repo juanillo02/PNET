@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="es">
 
+<!--   HEAD   -->
+
 <head>
     <meta name="keywords" content="karaoke, salas, musica">
     <meta name="description" content="Official website JUMA">
@@ -8,13 +10,17 @@
     <meta name="designer" content="Juan José Acosta Rodriguez & Mari Carmen Letrán Andrades">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Juma</title>
+    <title>Cantame otra</title>
+    <link rel="icon" type="image/x-icon" href="/Imagenes/favicon.ico">
 </head>
 
+<!--   BODY   -->
+
 <body>
+    <!-- Menu principal superior -->
     <header>
         <div class="Menu">
-            <div class="logo"><img src="http://dummyimage.com/200x100/000/fff&amp;text=LOGO" alt="" /></div>
+            <div class="logo"><img src="Imagenes/logo3.png" alt="" /></div>
             <nav>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -29,26 +35,35 @@
 
     <!-- Carrusel de salas -->
     <h1>Nuestras salas</h1>
-    <p>En JUMA, nuestras instalaciones están diseñadas para ofrecerte una experiencia única de karaoke. Cada una de
+    <p>En "Cántame Otra", nuestras instalaciones están diseñadas para ofrecerte una experiencia única de karaoke. Cada una de
         nuestras salas está equipada con tecnología de última generación, micrófonos de alta calidad, y un sistema de
         sonido que hará que te sientas como una estrella. Además, el ambiente de nuestras instalaciones está pensado
         para que disfrutes tanto en grupo como en pareja, creando momentos memorables en cada visita.</p>
 
-    <section>
-        <article>Cádiz</article>
-        <article>El Puerto</article>
-        <article>Sevilla</article>
-    </section>
+    <!-- Botón para seleccionar el lugar donde queremos ver las salas -->
+    <h2>Selecciona un lugar</h2>
+    <div>
+        <button>Cádiz</button>
+        <button>El Puerto</button>
+        <button>Sevilla</button>
+    </div>
+
     <!-- Fotos de salas -->
     <div class="carrusel">
         <div class="carrusel-images">
-            <img src="imagen1.jpg" alt="Image 1" class="active">
-            <img src="imagen2.jpg" alt="Image 2" class="right">
-            <img src="imagen3.jpg" alt="Image 3" class="left">
+            <img src="Imagenes/salaverano.jpg" alt="Image 1" class="active"> 
+            <h3>Sala verano</h3>
+            <p>¡Bienvenido a la Sala Verano, el lugar perfecto para disfrutar de la vibra cálida y alegre del verano durante todo el año! Con un diseño fresco y luminoso, esta sala transmite la sensación de un día soleado en la piscina. Disfruta de su ambiente relajado con cómodas hamacas, ideales para compartir con amigos y familiares. Las luces LED de colores y la decoración tropical te harán sentir como si estuvieras de vacaciones, mientras cantas tus canciones favoritas rodeado de un ambiente veraniego. ¡Reserva la Sala Verano y déjate llevar por la fiesta!</p>
+            <img src="Imagenes/salarock.jpg" alt="Image 2" class="right"> 
+            <h3>Sala rock</h3>
+            <p>La Sala Rock es para los más atrevidos! Si te apasiona el rock y quieres disfrutar de un karaoke con toda la energía de este género, esta sala es para ti. Con un diseño industrial y moderno, sus paredes de ladrillo expuesto, luces oscuras y detalles de metal crean el ambiente perfecto para liberar todo tu poderío vocal. Equipadas con un potente sistema de sonido y una amplia selección de canciones de rock, podrás sentirte como una verdadera estrella de concierto. ¿Estás listo para gritar y cantar a todo pulmón? ¡Reserva la Sala Rock y vive la experiencia más intensa del karaoke!</p>
+            <img src="Imagenes/salarosa.jpg" alt="Image 3" class="left"> 
+            <h3>Sala Corazón</h3>
+            <p>Si buscas un espacio lleno de estilo y encanto, la Sala Corazón es tu opción ideal. Con tonos delicados y elegantes, esta sala está diseñada para ofrecer una experiencia de karaoke única en un ambiente íntimo y acogedor. Sus paredes rosa suave y las luces tenues crean una atmósfera perfecta para disfrutar de una noche especial. Ya sea para una celebración o una salida entre amigas, la Sala Corazón está equipada con tecnología de última generación, lo que garantiza una experiencia musical inolvidable. ¡Ven y canta como una estrella en la Sala Corazón!</p>
         </div>
         <div class="carrusel-controls">
-            <button id="prev">&#8249;</button>
-            <button id="next">&#8250;</button>
+            <button id="prev" type="image"><img src="Imagenes/izquierda.png"></button>
+            <button id="next" type="image"><img src="Imagenes/derecha.png"></button>
         </div>
     </div>
 
@@ -72,29 +87,32 @@
         <tbody>
             <tr>
                 <td>Sala Verano</td>
+                <td>10 personas</td>
+                <td>2 bebidas/persona</td>
+                <td>4 micrófonos</td>
+                <td>14€/persona</td>
+            </tr>
+            <tr>
+                <td>Sala Rock</td>
                 <td>6 personas</td>
                 <td>2 bebidas/persona</td>
                 <td>3 micrófonos</td>
                 <td>12€/persona</td>
             </tr>
             <tr>
-                <td>Sala Verano</td>
-                <td>6 personas</td>
+                <td>Sala Corazón</td>
+                <td>4 personas</td>
                 <td>2 bebidas/persona</td>
-                <td>3 micrófonos</td>
-                <td>12€/persona</td>
-            </tr>
-            <tr>
-                <td>Sala Verano</td>
-                <td>6 personas</td>
-                <td>2 bebidas/persona</td>
-                <td>3 micrófonos</td>
-                <td>12€/persona</td>
+                <td>2 micrófonos</td>
+                <td>10€/persona</td>
             </tr>
         </tbody>
     </table>
+
+    <!--   FOOTER   -->
     <footer>
         <div class="PieIzq">
+            <!-- Horario -->
             <h3>Horario</h3>
             <nav>
                 <ul>
@@ -123,6 +141,7 @@
             </nav>
         </div>
         <div class="PieDcho">
+            <!-- Redes sociales -->
             <h3>Redes sociales</h3>
             <nav>
                 <ul>
@@ -134,7 +153,9 @@
                 </ul>
             </nav>
         </div>
-        <p>Copyright &copy;</p>
+        <!-- Copyright -->
+        <p>&copy; Cántame Otra 2025</p>
+        <!-- Contacto -->
         <div class="Contacto">
             <h3>Contacto</h3>
             <ul>

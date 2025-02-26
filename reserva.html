@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="es">
 
+<!--   HEAD   -->
+
 <head>
     <meta name="keywords" content="karaoke, salas, musica">
     <meta name="description" content="Official website JUMA">
@@ -8,13 +10,17 @@
     <meta name="designer" content="Juan José Acosta Rodriguez & Mari Carmen Letrán Andrades">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Juma</title>
+    <title>Cantame otra</title>
+    <link rel="icon" type="image/x-icon" href="/Imagenes/favicon.ico">
 </head>
 
+<!--   BODY   -->
+
 <body>
+    <!-- Menu principal (arriba de la pagina) -->
     <header>
         <div class="Menu">
-            <div class="logo"><img src="http://dummyimage.com/200x100/000/fff&amp;text=LOGO" alt="" /></div>
+            <div class="logo"><img src="Imagenes/logo3.png" alt="" /></div>
             <nav>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -26,13 +32,10 @@
         </div>
     </header>
 
+    <!-- Titulos de la pagina -->
     <h1>Reservas</h1>
-    <!-- Input para escribir los datos del reservante -->
-    <input type="text" placeholder="Escribe tu nombre">
-    <input type="email" placeholder="Escribe tu email">
-    <input type="tel" placeholder="Escribe tu teléfono">
-    <input type="number" placeholder="Introduce el número de personas que sois" min="0">
     <h2>Selecciona el día y la hora de la reserva de la sala</h2>
+
     <!-- Botón para seleccionar el lugar donde queremos reservar las salas -->
     <h3>Selecciona un lugar</h3>
     <div>
@@ -40,39 +43,63 @@
         <button>El Puerto</button>
         <button>Sevilla</button>
     </div>
-    <select>
-        <option>Sala Verano</option>
-        <option>Sala rock</option>
-        <option>Sala rosa</option>
-    </select>
+
+    <!-- Input para escribir los datos del reservante -->
+    <div>
+        <h3>Introduzca sus datos</h3>
+        <input required type="text" placeholder="Escribe tu nombre">
+        <input required type="email" placeholder="Escribe tu email">
+        <input required type="tel" placeholder="Escribe tu teléfono">
+        <input required type="number" placeholder="Introduce el número de personas que sois" min="0">
+    </div>
+
+    <!-- Seleccionar sala -->
+    <div>
+        <h3>Selecciona una sala</h3>
+        <select>
+            <option>Sala Verano</option>
+            <option>Sala rock</option>
+            <option>Sala rosa</option>
+        </select>
+    </div>
+
     <!-- Calendario para seleccionar la fecha disponible -->
-    <h3>Selecciona una fecha</h3>
-    <input type="date">
+    <div>
+        <h3>Selecciona una fecha</h3>
+        <input required type="date">
+    </div>
+
     <!-- Desplegable para seleccionar las horas disponibles en la sala y fecha seleccionadas anteriormente -->
-    <h3>Selecciona un horario</h3>
+    <div>
+        <h3>Selecciona un horario</h3>
 
-    <input type="checkbox" id="hora_1" name="hora[]" value="18:00-19:00">
-    <label for="hora_1">18:00-19:00</label><br>
-    <input type="checkbox" id="hora_2" name="hora[]" value="19:15-20:15">
-    <label for="hora_2">19:15-20:15</label><br>
-    <input type="checkbox" id="hora_3" name="hora[]" value="20:30-21:30">
-    <label for="hora_3">20:30-21:30</label><br>
-    <input type="checkbox" id="hora_4" name="hora[]" value="21:45-22:45">
-    <label for="hora_4">21:45-22:45</label><br>
-    <input type="checkbox" id="hora_5" name="hora[]" value="23:00-00:00">
-    <label for="hora_5">23:00-00:00</label><br>
-    <input type="checkbox" id="hora_6" name="hora[]" value="00:15-01:15">
-    <label for="hora_6">00:15-01:15</label><br>
-    <input type="checkbox" id="hora_7" name="hora[]" value="01:30-02:30">
-    <label for="hora_7">01:30-02:30</label><br>
-    <input type="checkbox" id="hora_8" name="hora[]" value="02:45-03:45">
-    <label for="hora_8">02:45-03:45</label><br>
-
+        <input type="checkbox" id="hora_1" name="hora[]" value="18:00-19:00">
+        <label for="hora_1">18:00-19:00</label><br>
+        <input type="checkbox" id="hora_2" name="hora[]" value="19:15-20:15">
+        <label for="hora_2">19:15-20:15</label><br>
+        <input type="checkbox" id="hora_3" name="hora[]" value="20:30-21:30">
+        <label for="hora_3">20:30-21:30</label><br>
+        <input type="checkbox" id="hora_4" name="hora[]" value="21:45-22:45">
+        <label for="hora_4">21:45-22:45</label><br>
+        <input type="checkbox" id="hora_5" name="hora[]" value="23:00-00:00">
+        <label for="hora_5">23:00-00:00</label><br>
+        <input type="checkbox" id="hora_6" name="hora[]" value="00:15-01:15">
+        <label for="hora_6">00:15-01:15</label><br>
+        <input type="checkbox" id="hora_7" name="hora[]" value="01:30-02:30">
+        <label for="hora_7">01:30-02:30</label><br>
+        <input type="checkbox" id="hora_8" name="hora[]" value="02:45-03:45">
+        <label for="hora_8">02:45-03:45</label><br>
+    </div>
 
     <!-- Botón para aceptar la reserva -->
-    <button type="submit">Aceptar</button>
+    <div>
+        <button type="submit">Aceptar</button>
+    </div>
+
+    <!--   FOOTER   -->
     <footer>
         <div class="PieIzq">
+            <!-- Horario -->
             <h3>Horario</h3>
             <nav>
                 <ul>
@@ -101,6 +128,7 @@
             </nav>
         </div>
         <div class="PieDcho">
+            <!-- Redes sociales -->
             <h3>Redes sociales</h3>
             <nav>
                 <ul>
@@ -112,7 +140,9 @@
                 </ul>
             </nav>
         </div>
-        <p>Copyright &copy;</p>
+        <!-- Copyright -->
+        <p>&copy; Cántame Otra 2025</p>
+        <!-- Contacto -->
         <div class="Contacto">
             <h3>Contacto</h3>
             <ul>
