@@ -11,175 +11,317 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Cantame otra</title>
+    <!-- Fuentes de letras -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Calligraffitti&display=swap" rel="stylesheet">
+    <!-- Css -->
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <!-- Favicono -->
     <link rel="icon" type="image/x-icon" href="/Imagenes/favicon.ico">
+    <!-- JavaScript -->
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 </head>
 
 <!--   BODY   -->
 
 <body>
-    <!-- Menu principal (arriba de la pagina) -->
+    <!-- Menu principal superior -->
     <header>
         <div class="Menu">
-            <div class="logo"><img src="Imagenes/logo3.png" alt="" /></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sala.html">Salas</a></li>
-                    <li><a href="reserva.html">Reserva</a></li>
-                    <li><a href="informacion.html">Información</a></li>
-                </ul>
-            </nav>
+            <div class="Menualineado">
+                <a href="index.html">
+                    <img class="Logo" src="Imagenes/logo3.png" alt="Logo" />
+                </a>
+                <nav>
+                    <ul class="Listaunidamenu">
+                        <li><a class="Listamenu" href="index.html" id="Inicio">Inicio</a></li>
+                        <li><a class="Listamenu" href="sala.html">Salas</a></li>
+                        <li><a class="Listamenu" href="reserva.html" id="tres">Reserva</a></li>
+                        <li><a class="Listamenu" href="informacion.html">Información</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
 
     <!-- Foto de portada -->
-    <div class="FotoPrincipal">
-        <img src="Imagenes/Principal.png" alt="" />
+    <div>
+        <img class="Fotoprincipal" src="Imagenes/Principal.png" alt="Foto principal" height="750" width="5000" />
     </div>
 
 
     <!-- Reseñas: section compuesta por varios article y al final, un aside-->
-    <section>
+    <section class="Resenas">
         <!-- Como la ñ es un caracter especial, usaremos &ntilde; -->
-        <h1> Nuestras rese&ntilde;as </h1>
-        <article>
-            <div class="resena1">
-                <h3> Marta
-                    <!-- Icono de estrella (se repite 5 veces para mostrar 5 estrellas) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </h3>
-                <!-- Comentario de la reseña -->
-                <p>Cántame Otra es genial. La calidad del sonido es superior a otros karaokes que he probado. ¡Recomendado!</p>
-            </div>
-        </article>
-        <article>
-            <div class="resena2">
-                <h3> Alejandro
-                    <!-- Icono de estrella (se repite 5 veces para mostrar 5 estrellas) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </h3>
-                <!-- Comentario de la reseña -->
-                <p> Cantame Otra: ¡comodidad y diversión aseguradas! Fácil de usar y perfecto para una noche de karaoke con amigos. </p>
-            </div>
-        </article>
-        <article>
-            <div class="resena3">
-                <h3> Sofía
-                    <!-- Icono de estrella (se repite 5 veces para mostrar 5 estrellas) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        style="width: 16px; height: 16px;">
-                        <path fill-rule="evenodd"
-                            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </h3>
-                <!-- Comentario de la reseña -->
-                <p>¡Recomendadísimo! Cántame Otra ofrece una calidad de sonido excepcional para una experiencia de karaoke inigualable.</p>
-            </div>
-        </article>
+        <h1 class="Titulo"> Nuestras rese&ntilde;as </h1>
+            <article class="Resena Resena1 visible">
+                <div>
+                    <h3> Marta
+                        <!-- Icono de estrella (se repite 5 veces para mostrar 5 estrellas) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </h3>
+                    <!-- Comentario de la reseña -->
+                    <p>Cántame Otra es genial. La calidad del sonido es superior a otros karaokes que he probado.
+                        ¡Recomendado!</p>
+                </div>
+            </article>
+            <article class="Resena Resena2 visible">
+                <div>
+                    <h3> Alejandro
+                        <!-- Icono de estrella (se repite 5 veces para mostrar 5 estrellas) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </h3>
+                    <!-- Comentario de la reseña -->
+                    <p> Cantame Otra: ¡comodidad y diversión aseguradas! Fácil de usar y perfecto para una noche de
+                        karaoke
+                        con amigos. </p>
+                </div>
+            </article>
+            <article class="Resena Resena3 visible">
+                <div>
+                    <h3> Sofía
+                        <!-- Icono de estrella (se repite 5 veces para mostrar 5 estrellas) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </h3>
+                    <!-- Comentario de la reseña -->
+                    <p>¡Recomendadísimo! Cántame Otra ofrece una calidad de sonido excepcional para una experiencia de
+                        karaoke inigualable.</p>
+                </div>
+            </article>
+            <article class="Resena Resena4">
+                <div>
+                    <h3> Pedro
+                        <!-- Icono de estrella (se repite 5 veces para mostrar 5 estrellas) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </h3>
+                    <!-- Comentario de la reseña -->
+                    <p>Fuimos aquí a celebrar mi cumpleaños y no puedo estar más contenta con el trato que hemos
+                        recibido.</p>
+                </div>
+            </article>
+            <article class="Resena Resena5">
+                <div>
+                    <h3> Isabel
+                        <!-- Icono de estrella (se repite 5 veces para mostrar 5 estrellas) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </h3>
+                    <!-- Comentario de la reseña -->
+                    <p>Totalmente recomendable. Fuimos un grupo de 12 personas y todo genial. La atención prestada de
+                        10. Catálogo extenso de canciones. Volveremos seguro</p>
+                </div>
+            </article>
+            <article class="Resena Resena6">
+                <div>
+                    <h3> Javier
+                        <!-- Icono de estrella (se repite 5 veces para mostrar 5 estrellas) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </h3>
+                    <!-- Comentario de la reseña -->
+                    <p>El martes fuimos toda la familia a celebrar el cumpleaños de una hija. El lugar y la decoración
+                        es espectacular.</p>
+                </div>
+            </article>
 
         <!-- Noticias: aside en el lado derecho de la web -->
-        <aside>
-            <h4>Noticias</h4>
+        <aside class="Noticias">
+            <h4 class="Titulo" title="Desliza para ver más noticias" tooltip-dir="bottom">Noticias</h4>
             <!-- Lista desordenada con varios URLs -->
-            <ul>
-                <li><a
+            <ul class="Noticiasunidas">
+                <li><a class="Noticia1"
                         href="https://www.mujerhoy.com/vivir/fitness/karaoke-ejercicio-ideal-calentamiento-mejorar-agilidad-juego-pies-desplazamiento-lateral-20250216082955-nt.html">Karaoke,
                         el ejercicio ideal de calentamiento para mejorar agilidad, juego de pies y desplazamiento
-                        lateral</a></li>
-                <li><a
-                        href="https://www.msn.com/es-es/entretenimiento/musica/joe-crep%C3%BAsculo-el-karaoke-es-la-manera-definitiva-de-divertirse-en-grupo/ar-AA1yNDpH?ocid=BingNewsSerp">Joe
-                        Crepúsculo: 'El karaoke es la manera definitiva de divertirse en grupo'</a></li>
-                <li><a href="https://javivi-mr.github.io/CalculadO2/">Según CalculadO2, el karaoke reduce el CO2</a>
+                        lateral</a>
+                    <img class="Noticia1" src="Imagenes/Noticia1.png" alt="Noticia1" height="200" width="200" />
                 </li>
-                <li><a
+                <li><a class="Noticia2"
+                        href="https://www.msn.com/es-es/entretenimiento/musica/joe-crep%C3%BAsculo-el-karaoke-es-la-manera-definitiva-de-divertirse-en-grupo/ar-AA1yNDpH?ocid=BingNewsSerp">Joe
+                        Crepúsculo: 'El karaoke es la manera definitiva de divertirse en grupo'</a><img class="Noticia2"
+                        src="Imagenes/Noticia2.jpg" alt="Noticia2" height="200" width="300" /></li>
+                <li><a class="Noticia3" href="https://javivi-mr.github.io/CalculadO2/">Según CalculadO2, el karaoke
+                        reduce el CO2</a><img class="Noticia3" src="Imagenes/Noticia3.jpg" alt="Noticia3" height="200"
+                        width="200" /></li>
+                <li><a class="Noticia4"
                         href="https://www.elespanol.com/alicante/cultura/musica/20250131/rigoberta-bandini-vuelve-benidorm-canta-karaoke-tema-ay-mama/920658471_0.html">Rigoberta
-                        Bandini vuelve a Benidorm y canta en un karaoke su tema 'Ay mamá'</a></li>
+                        Bandini vuelve a Benidorm y canta en un karaoke su tema 'Ay mamá'</a><img class="Noticia4"
+                        src="Imagenes/Noticia4.jpg" alt="Noticia4" height="150" width="300" /></li>
             </ul>
-
         </aside>
     </section>
 
@@ -191,27 +333,27 @@
             <!-- Horario -->
             <h3>Horario</h3>
             <nav>
-                <ul>
+                <ul class="Horario">
                     <li>
                         <p>Lunes: - </p>
                     </li>
                     <li>
-                        <p>Martes: 18:00-22:00</p>
+                        <p>Martes: 18:00-04:00</p>
                     </li>
                     <li>
-                        <p>Miercoles: 18:00-22:00</p>
+                        <p>Miercoles: 18:00-04:00</p>
                     </li>
                     <li>
-                        <p>Jueves: 18:00-22:00</p>
+                        <p>Jueves: 18:00-04:00</p>
                     </li>
                     <li>
-                        <p>Viernes: 18:00-02:00</p>
+                        <p>Viernes: 18:00-04:00</p>
                     </li>
                     <li>
                         <p>Sábado: 18:00-04:00</p>
                     </li>
                     <li>
-                        <p>Domingo: 18:00-00:00</p>
+                        <p>Domingo: 18:00-04:00</p>
                     </li>
                 </ul>
             </nav>
@@ -220,25 +362,32 @@
             <!-- Redes sociales -->
             <h3>Redes sociales</h3>
             <nav>
-                <ul>
-                    <li><a href="https://facebook.com/partytymekaraokee">Facebook</a></li>
-                    <li><a href="https://x.com/Karaokes_">Twitter</a></li>
-                    <li><a href="https://youtube.com/@partytymekaraokeenespanol7262?si=otVVQdNnxuU-o1Bv">Youtube</a>
-                    </li>
-                    <li><a href="https://instagram.com/partytymekaraoke">Instagram</a></li>
+                <ul class="Redes">
+                    <li><a href="https://facebook.com/partytymekaraokee"><img src="Imagenes/Facebook.png"
+                                alt="Logo de Facebook" width="60" height="60"></a></li>
+                    <li><a href="https://x.com/Karaokes_"><img src="Imagenes/Twitter.png" alt="Logo de Twitter"
+                                width="60" height="60"></a></li>
+                    <li><a href="https://youtube.com/@partytymekaraokeenespanol7262?si=otVVQdNnxuU-o1Bv"><img
+                                src="Imagenes/Youtube.png" alt="Logo de Youtube" width="60" height="60"></a></li>
+                    <li><a href="https://instagram.com/partytymekaraoke"><img src="Imagenes/Instagram.png"
+                                alt="Logo de Instagram" width="60" height="60"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Contacto -->
+        <div>
+            <h3>Contacto</h3>
+            <nav>
+                <ul class="Contacto">
+                    <li><a href="tel:+34689257984"><img src="Imagenes/Teléfono.png" alt="Teléfono" width="70"
+                                height="80"></a></li>
+                    <li><a href="mailto:karaokescantame@cantameotra.es"><img src="Imagenes/Correo.png" alt="Correo"
+                                width="80" height="80"></a></li>
                 </ul>
             </nav>
         </div>
         <!-- Copyright -->
         <p>&copy; Cántame Otra 2025</p>
-        <!-- Contacto -->
-        <div class="Contacto">
-            <h3>Contacto</h3>
-            <ul>
-                <li><a href="tel:+34689257984"> Llámanos</a></li>
-                <li><a href="mailto:karaokesjuma@juma.com">Correo</a></li>
-            </ul>
-        </div>
     </footer>
 </body>
 

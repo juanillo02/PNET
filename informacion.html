@@ -11,41 +11,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Cantame otra</title>
+    <!-- Fuentes de letras -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Calligraffitti&display=swap" rel="stylesheet">
+    <!-- Css -->
+    <link href="css/informacion.css" rel="stylesheet" type="text/css">
+    <!-- JavaScript -->
+    <script src="js/informacion.js"></script>
+    <!-- Favicono -->
     <link rel="icon" type="image/x-icon" href="/Imagenes/favicon.ico">
 </head>
 
 <!--   CUERPO   -->
 
 <body>
-    <!-- Menu superior de la web -->
+    <!-- Menu principal superior -->
     <header>
         <div class="Menu">
-            <div class="logo"><img src="Imagenes/logo3.png" alt="" /></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sala.html">Salas</a></li>
-                    <li><a href="reserva.html">Reserva</a></li>
-                    <li><a href="informacion.html">Información</a></li>
-                </ul>
-            </nav>
+            <div class="Menualineado">
+                <a href="index.html">
+                    <img class="Logo" src="Imagenes/logo3.png" alt="Logo" />
+                </a>
+
+                <nav>
+                    <ul class="Listaunidamenu">
+                        <li><a class="Listamenu" href="index.html" id="Inicio">Inicio</a></li>
+                        <li><a class="Listamenu" href="sala.html">Salas</a></li>
+                        <li><a class="Listamenu" href="reserva.html" id="tres">Reserva</a></li>
+                        <li><a class="Listamenu" href="informacion.html">Información</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
-
+    <div class="Union">
+    <!-- Botón a sección de una página -->
+    <a class="Imagen" href="informacion.html#Mapa">
+        <img class="Seccion" src="Imagenes/mapa.png" alt="Ubicación" />
+    </a>
+    
     <!-- Descripción -->
-    <article>
+    <div class="Foto">
+        <img src="Imagenes/Informacion.jpg" alt="Foto Cantando" width="700em" height="500em"
+            style="border: 20px; border-radius: 80px;" />
+    </div>
+    <!-- Leer más -->
+    <article class="Descripcion">
         <h2> Nuestro karaoke </h2>
-        <div class="Foto">
-            <img src="Imagenes/Informacion.jpg" alt="" />
-        </div>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptate. </p>
+        <p id="Texto"> Cántame Otra es una empresa dedicada a ofrecer experiencias inolvidables de karaoke, combinando tecnología
+            de punta con un ambiente vibrante y acogedor. </p>
+        <button id="LeerMas" onclick="Mas()">Leer más</button> 
     </article>
+</div>
+    <!-- Bebidas disponible -->
+    <div class="Bebidas">
+        <h2>Nuestras Bebidas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bebida</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Agua</td>
+                    <td>1€</td>
+                </tr>
+                <tr>
+                    <td>Refrescos</td>
+                    <td>2€</td>
+                </tr>
+                <tr>
+                    <td>Cerveza tercio</td>
+                    <td>2,50€</td>
+                </tr>
+                <tr>
+                    <td>Cerveza sin alcohol</td>
+                    <td>2,50€</td>
+                </tr>
+                <tr>
+                    <td>Cerveza sin glúten</td>
+                    <td>2,50€</td>
+                </tr>
+                <tr>
+                    <td>Zumos</td>
+                    <td>1,50€</td>
+                </tr>
+                <tr>
+                    <td>Red bull</td>
+                    <td>2,50€</td>
+                </tr>
+                <tr>
+                    <td>Licores</td>
+                    <td>3,50€</td>
+                </tr>
+                <tr>
+                    <td>Combinados con refrescos</td>
+                    <td>6€</td>
+                </tr>
+                <tr>
+                    <td>Combinados con zumos</td>
+                    <td>6€</td>
+                </tr>
+                <tr>
+                    <td>Combinados con Red bull</td>
+                    <td>6,50€</td>
+                </tr>
+                <tr>
+                    <td>Copa de vino</td>
+                    <td>2€</td>
+                </tr>
+                <tr>
+                    <td>Botella de vino</td>
+                    <td>18€</td>
+                </tr>
+                <tr>
+                    <td>Botella de alcohol</td>
+                    <td>60€</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
 
     <!-- Mapa donde se encuentran los distintos karaokes que tiene nuestra franquicia -->
-    <h2>Ubicación</h2>
-    <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1rAR7rfe4gMxtlqxxA0H3NLMGIlngjkM&ehbc=2E312F" width="640"
-        height="480">
-    </iframe>
+    <div id="Mapa" class="Mapa">
+        <div>
+            <h2>Ubicación</h2>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1rAR7rfe4gMxtlqxxA0H3NLMGIlngjkM&ehbc=2E312F"
+                width="600" height="480">
+
+            </iframe>
+        </div>
+        <div>
+            <h2>Interior</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1741000223069!6m8!1m7!1sCAoSLEFGMVFpcE1tSkswbjZHUVhBVDE5c3BXdHJRczJoODQ4eUlpVWozUHFmc3V6!2m2!1d37.97755910363598!2d-1.123303701159557!3f258.76800328012183!4f-17.78156473825645!5f0.7820865974627469"
+                width="600" height="480" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
 
 
     <!--   FOOTER   -->
@@ -54,27 +161,27 @@
             <!-- Horario -->
             <h3>Horario</h3>
             <nav>
-                <ul>
+                <ul class="Horario">
                     <li>
                         <p>Lunes: - </p>
                     </li>
                     <li>
-                        <p>Martes: 18:00-22:00</p>
+                        <p>Martes: 18:00-04:00</p>
                     </li>
                     <li>
-                        <p>Miercoles: 18:00-22:00</p>
+                        <p>Miercoles: 18:00-04:00</p>
                     </li>
                     <li>
-                        <p>Jueves: 18:00-22:00</p>
+                        <p>Jueves: 18:00-04:00</p>
                     </li>
                     <li>
-                        <p>Viernes: 18:00-02:00</p>
+                        <p>Viernes: 18:00-04:00</p>
                     </li>
                     <li>
                         <p>Sábado: 18:00-04:00</p>
                     </li>
                     <li>
-                        <p>Domingo: 18:00-00:00</p>
+                        <p>Domingo: 18:00-04:00</p>
                     </li>
                 </ul>
             </nav>
@@ -83,22 +190,29 @@
             <!-- Redes sociales -->
             <h3>Redes sociales</h3>
             <nav>
-                <ul>
-                    <li><a href="https://facebook.com/partytymekaraokee">Facebook</a></li>
-                    <li><a href="https://x.com/Karaokes_">Twitter</a></li>
-                    <li><a href="https://youtube.com/@partytymekaraokeenespanol7262?si=otVVQdNnxuU-o1Bv">Youtube</a>
-                    </li>
-                    <li><a href="https://instagram.com/partytymekaraoke">Instagram</a></li>
+                <ul class="Redes">
+                    <li><a href="https://facebook.com/partytymekaraokee"><img src="Imagenes/Facebook.png"
+                                alt="Logo de Facebook" width="60" height="60"></a></li>
+                    <li><a href="https://x.com/Karaokes_"><img src="Imagenes/Twitter.png" alt="Logo de Twitter"
+                                width="60" height="60"></a></li>
+                    <li><a href="https://youtube.com/@partytymekaraokeenespanol7262?si=otVVQdNnxuU-o1Bv"><img
+                                src="Imagenes/Youtube.png" alt="Logo de Youtube" width="60" height="60"></a></li>
+                    <li><a href="https://instagram.com/partytymekaraoke"><img src="Imagenes/Instagram.png"
+                                alt="Logo de Instagram" width="60" height="60"></a></li>
                 </ul>
             </nav>
         </div>
         <!-- Contacto -->
-        <div class="Contacto">
+        <div>
             <h3>Contacto</h3>
-            <ul>
-                <li><a href="tel:+34689257984"> Llámanos</a></li>
-                <li><a href="mailto:karaokesjuma@juma.com">Correo</a></li>
-            </ul>
+            <nav>
+                <ul class="Contacto">
+                    <li><a href="tel:+34689257984"><img src="Imagenes/Teléfono.png" alt="Teléfono" width="70"
+                                height="80"></a></li>
+                    <li><a href="mailto:karaokescantame@cantameotra.es"><img src="Imagenes/Correo.png" alt="Correo"
+                                width="80" height="80"></a></li>
+                </ul>
+            </nav>
         </div>
         <!-- Copyright -->
         <p>&copy; Cántame Otra 2025</p>
