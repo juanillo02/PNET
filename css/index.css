@@ -1,0 +1,380 @@
+@media (max-width: 125em) {
+
+    /* ---------- Elementos basicos (titulos, parrafos...) ---------------- */
+    html{
+        scrollbar-color: #FF96D5 #5C1C4D;
+    }
+    
+    body {
+        background-color: #0F1425;
+        overflow-x: hidden;
+        background-image: url('../Imagenes/fondo.jpg'); /* Imagen del micrófono */
+        background-repeat: repeat; /* Repetir */
+        background-size: 15em 15em; /* Ajusta el tamaño de las imágenes */
+        animation: moverFondo 3600s  linear infinite; /* Animación infinita */
+    }
+
+    h1, h2, h3, h4, p, a{
+        font-family: "Audiowide", serif;
+    }
+
+    @keyframes moverFondo {
+        from {
+            background-position: 0 0; /* Punto de inicio */
+        }
+        to {
+            background-position: -10000em -10000em; /* Se mueve diagonalmente */
+        }
+    }
+
+    /* ----------------- Menu ----------------- */
+    .Menu {
+        font-family: "Audiowide", serif;
+        background-color: #5C1C4D;
+        position: fixed;    /*Menú fijo*/
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        z-index: 1000;  /* Un valor alto para que esté por encima de otros elementos */
+    }
+
+    /* Logo y elementos para aceeder a las otras paginas */
+    .Menualineado {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Imagen del menu (logo) */
+    .Logo {
+        width: 18em;
+        height: 4.3em;
+    }
+
+    /* Elementos del menú para acceder a las otras paginas */
+    .Listaunidamenu {
+        display: flex;
+        list-style: none; /* Para quitar los puntos de la lista */
+        margin: 0;
+        font-size: 1.4em;
+    }
+
+    /* Cada elemento del menú (menos el logo)*/
+    .Listamenu {
+        position: relative;
+        left: -5%;
+        text-decoration: none; /*Quitar el subrayado*/
+        display: block;
+        padding: 1em;
+        color: #FF96D5; /*Color de la letra*/
+        width: 20%;
+        margin-left: -20%;
+        top: 5%;
+    }
+
+    /*Cambiar el color cuando esté el ratón por encima*/
+    .Listamenu:hover {
+        color: #C9599c;
+        text-decoration: none;
+    }
+
+    /*Realizar el circulo que rodea a reserva*/
+    #tres {
+        background-color: #0F1425;
+        border-radius: 50%;
+        width: 70%;
+        height: 30%;
+        animation: parpadeo 1.5s linear infinite; /*Realizar la animación con una duración de 1.5s que sea linear y nunca acabe*/
+    }
+
+    /*Parar la animación cuando el ratón está encima*/
+    #tres:hover {
+        animation: none;
+    }
+
+    /* Esto hace el efecto de parpadeo que podrá ver en la página*/
+    @keyframes parpadeo {
+        50% { /*En la mitad del tiempo la opacidad será de 0*/
+            opacity: 0;
+        }
+    }
+
+    /* ----------------- Elementos basicos ----------------- */
+    /*Foto principal*/
+    .Fotoprincipal {
+        float: inline-start;
+        padding-top: 1.25em;
+        width: 102%;
+        position: relative;
+        left: -1%;
+    }
+
+    /*Reseñas*/
+    .Resenas {
+        color: #FF96D5; /*Color de la letra*/
+        height: 100em;
+    }
+
+    /*Titulo de Reseñas*/
+    .Titulo {
+        text-align: left;
+        position: relative;
+        left: 14%;
+        width: 50%;
+        font-size: 4em;
+        color: #FF96D5;
+    }
+
+    .Titulo::after{
+        background-color: #5B0749;
+        border-radius: 5px;
+        color: #FF96D5;
+        content: attr(title);
+        opacity: 0;
+        padding: 6px 12px;
+        position: absolute;
+        left: 110%;
+        top: 30px;
+        transition: all .25s ease;
+        visibility: hidden;
+        white-space: nowrap;
+    }
+
+    /*Cada una de las reseñas*/
+    article {
+        color: #0F1425; /*Color de la letra*/
+        background-color: #FF96D5;
+        width: 51em;
+        position: relative;
+        padding: 1em;
+        margin: 1em;
+        left: 4em;
+        height: 7em;
+    }
+
+    /*Para desaparecer todas las reseñas*/
+    .Resena {
+        display: none; /* Por defecto, todas las reseñas están ocultas */
+    }
+
+    /*Para hacer visibles las reseñas que tengan esta clase*/
+    .visible {
+        display: block; /* Mostrar solo las reseñas con la clase 'visible' */
+    }
+
+    /*Apartado de noticias*/
+    aside {
+        background-color: #5B0749;
+        color: white;
+        position: relative;
+        left: 69%;
+        width: 29em;
+        bottom: 38.5em;
+        padding: 1%;
+        height: 44.4em;
+        overflow-y: auto; /*Realizar scroll cuando supera el tamaño establecido*/
+        scrollbar-color: #FF96D5 #5B0749;  /*Color de la barra*/
+    }
+
+    /*Tamñao de la letra de las noticias*/
+    aside>ul {
+        list-style: none;
+        font-size: 1.2em;
+        margin: 2em;
+    }
+
+    /*Color de las noticias y posición*/
+    .Noticia1, .Noticia2, .Noticia3, .Noticia4{
+        color:#FF96D5;
+        text-decoration: none;
+        display: flex;
+    }
+    /*Marcar qué noticia está pisando el ratón*/
+    .Noticia1:hover, .Noticia2:hover, .Noticia3:hover, .Noticia4:hover{
+        color: #C9599c;
+        text-decoration: none;
+    }
+/* --------------Footer------------- */
+    footer {
+        background-color: #5C1C4D;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        font-size: 0.8em;
+        margin-top: 12em;
+        height: 19em;
+        top: 110em;
+        left: 0%;
+        right: 0%;
+        position: absolute;
+    }
+
+    footer>div>h3 {
+        font-family: "Audiowide", serif;
+        text-align: center;
+        color: #FF96D5;
+        font-size: 1.17em;
+        font-weight: bold;
+    }
+
+    footer>div>nav>ul {
+        list-style: none;
+    }
+
+    .Redes {
+        display: flex;
+        width: 5%;
+    }
+
+    .Contacto {
+        display: flex;
+    }
+}
+
+/* -------------------  Media Queries   ---------------- */
+/* Moviles */
+@media (max-width: 86.875em) and (min-width: 20em) {
+
+    /* ---------- Elementos basicos (titulos, parrafos...) ---------------- */
+    html{
+        scrollbar-color: #FF96D5 #5C1C4D;
+    }
+    
+    body {
+        background-color: #0F1425;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, p, a{
+        font-family: "Audiowide", serif;
+    }
+
+    /* ----------------- Menu ----------------- */
+    .Menu {
+        font-family: "Audiowide", serif;
+        background-color: #5C1C4D;
+        position: fixed;
+        /*Menú fijo*/
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        z-index: 1000;
+        /* Un valor alto para que esté por encima de otros elementos */
+    }
+
+    /* Logo y elementos para aceeder a las otras paginas */
+    .Menualineado {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    /* Imagen del menu (logo) */
+    .Logo {
+        width: 15em;
+        height: 4em;
+        margin: 0 auto;
+        margin-top: 1em;
+        display: flex;
+        align-items: center;
+        padding: 0.5em;
+    }
+
+    /* Desaparecer apartado de inicio */
+    #Inicio {
+        display: none;
+    }
+
+    /* Elementos del menú para acceder a las otras paginas */
+    .Listaunidamenu {
+        display: flex;
+        list-style: none;
+        /* Para quitar los puntos de la lista */
+        font-size: 1.2em;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 1em;
+    }
+
+    /* Cada elemento del menú (menos el logo)*/
+    .Listamenu {
+        position: relative;
+        left: -5%;
+        text-decoration: none;
+        /*Quitar el subrayado*/
+        display: block;
+        padding: 0.7em;
+        color: #FF96D5;
+        /*Color de la letra*/
+        width: 20%;
+        /* margin-left: -5'%; */
+    }
+
+
+    /* ----------------- Elementos basicos ----------------- */
+    .Fotoprincipal {
+        display: none;
+        right: 0;
+    }
+
+    .Resenas {
+        color: #FF96D5; /*Color de la letra*/
+        margin-top: 10em;
+    }
+
+    .Titulo {
+        text-align: center;
+        position: relative;
+        width: 9em;
+        font-size: 3em;
+        left: 4%;
+    }
+
+    h1{
+        background-color: #0F1425;
+    }
+
+    article {
+        color: #0F1425; /*Color de la letra*/
+        background-color: #FF96D5;
+        width: 91%;
+        height: 9%;
+        position: relative;
+        padding: 1em;
+        margin: 2em;
+        left: -3%;
+    }
+
+    aside {
+        background-color: #5B0749;
+        color: white;
+        position: relative;
+        width: 96%;
+        top: 1em;
+        margin-left: -69%;
+    }
+
+    aside>ul {
+        list-style: none;
+        font-size: 1.2em;
+        margin: 0em;
+    }
+
+    /* ----------------- Footer ----------------- */
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        height: 35em;
+        margin-top: 44.2%;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .PieIzq {
+        margin-top: -2em;
+    }
+
+}
