@@ -12,6 +12,16 @@
         background-repeat: repeat; /* Repetir */
         background-size: 15em 15em; /* Ajusta el tamaño de las imágenes */
         animation: moverFondo 3600s  linear infinite; /* Animación infinita */
+        display: flex;
+        flex-direction: column;
+    }
+
+    body.Modoclaro{
+        overflow-x: hidden;
+        background-image: url('../Imagenes/fondoclaro.jpg'); /* Mantener la misma imagen de fondo */
+        background-repeat: repeat; /* Repetir la imagen */
+        background-size: 15em 15em; /* Mantener el tamaño de la imagen */
+        animation: moverFondo 3600s linear infinite; /* Mantener la misma animación */
     }
 
     h1, h2, h3, h4, p, a{
@@ -73,12 +83,12 @@
 
     /*Cambiar el color cuando esté el ratón por encima*/
     .Listamenu:hover {
-        color: #C9599c;
+        color: #ebcddf;
         text-decoration: none;
     }
 
     /*Realizar el circulo que rodea a reserva*/
-    #tres {
+    #Reserva {
         background-color: #0F1425;
         border-radius: 50%;
         width: 70%;
@@ -87,7 +97,7 @@
     }
 
     /*Parar la animación cuando el ratón está encima*/
-    #tres:hover {
+    #Reserva:hover {
         animation: none;
     }
 
@@ -98,6 +108,76 @@
         }
     }
 
+    /* Contenedor del interruptor */
+    .Menualineado>button{
+        position: fixed;
+        top: 2.9%;
+        right: 1%;
+        z-index: 10000;
+        background-color: transparent;
+        border: none;
+        transition: transform 0.5s ease-in-out;
+        cursor: pointer;
+        transition: background 0.5s;
+        font-size: 1.5em;
+    }
+
+    /* Boton para cambiar el tamaño de la letra */
+    .Botonfuente{
+        position: fixed;
+        bottom: 2em;
+        z-index: 100000;
+    }
+
+    .Botonfuente > button {
+        background-color: #932F7D; 
+        border-radius: 50em;
+        width: 4em;  
+        height: 4em; 
+        /* border: non e; */
+        border-color: #b44d8b ;
+        border-width: 0.2em;
+        color: white;
+        font-size: 1.2em;
+        font-weight: bold;  /* Esto pone el texto en negrita */
+        font-family: "Audiowide", serif;
+    }
+
+    .Botonfuente > button:hover {
+        background-color: #762665;
+    }
+
+    .Botonfuente > button:active {
+        background-color: #9f488f;
+    }
+
+    #Parar {
+        background-color: transparent; /* Sin fondo */
+        border: none;
+        border-radius: 50%;
+        width: 5em;  
+        height: 5em; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-bottom:2em;
+        margin-top: -2em; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #Parar img {
+        width: 100%; 
+        height: auto; 
+    }
+    
+    #Parar:hover {
+        opacity: 0.6;
+    }
+
+    
+    
     /* ----------------- Elementos basicos ----------------- */
     /*Foto principal*/
     .Fotoprincipal {
@@ -108,20 +188,52 @@
         left: -1%;
     }
 
-    /*Reseñas*/
-    .Resenas {
-        color: #FF96D5; /*Color de la letra*/
-        height: 100em;
+    .Resenas 
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: center;
+        color: #FF96D5;
+        
     }
 
-    /*Titulo de Reseñas*/
+    .Resenas>div
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        overflow:hidden;
+
+        flex-grow: 1;  /* Asegura que las columnas se distribuyan equitativamente */
+        flex-shrink: 0; /* No permitir que se encojan */
+        flex-basis: 70%; /* Definir un tamaño base */
+        margin-left:1em;
+        margin-bottom:3em;
+    }
+
     .Titulo {
-        text-align: left;
-        position: relative;
-        left: 14%;
-        width: 50%;
+        /* text-align: left;
+        position: relative; */
+        /* left: 14%;
+        width: 50%; */
         font-size: 4em;
         color: #FF96D5;
+    }
+
+    
+    body.Modoclaro .Resenas>h1{
+        color:#FF96D5;
+    }
+
+    body.Modoclaro .Resenas>article{
+        background-color:#FF96D5;
+        color: #0F1425;
+    }
+
+    body.Modoclaro .Resenas>div>h1{
+        color: #5B0749;
     }
 
     .Titulo::after{
@@ -139,18 +251,6 @@
         white-space: nowrap;
     }
 
-    /*Cada una de las reseñas*/
-    article {
-        color: #0F1425; /*Color de la letra*/
-        background-color: #FF96D5;
-        width: 51em;
-        position: relative;
-        padding: 1em;
-        margin: 1em;
-        left: 4em;
-        height: 7em;
-    }
-
     /*Para desaparecer todas las reseñas*/
     .Resena {
         display: none; /* Por defecto, todas las reseñas están ocultas */
@@ -161,106 +261,144 @@
         display: block; /* Mostrar solo las reseñas con la clase 'visible' */
     }
 
-    /*Apartado de noticias*/
+    article {
+        color: #0F1425; /*Color de la letra*/
+        background-color: #FF96D5;
+
+        padding: 1em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+        margin-left: 1em;
+        display:flex;
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap:wrap;
+        /* margin-right: 30em; */
+        /* width:50em; */
+    }
+    
+
     aside {
-        background-color: #5B0749;
+        background-color: rgba(91, 7, 73, 0.5); /* Ajusta el valor alfa (0.7) para obtener la transparencia que desees */
         color: white;
-        position: relative;
-        left: 69%;
-        width: 29em;
-        bottom: 38.5em;
-        padding: 1%;
-        height: 44.4em;
-        overflow-y: auto; /*Realizar scroll cuando supera el tamaño establecido*/
-        scrollbar-color: #FF96D5 #5B0749;  /*Color de la barra*/
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        width: 50%;
+        height: 49em;
+        overflow-y: auto;
+        scrollbar-color: #FF96D5 #5B0749; /* Color de la barra de desplazamiento */
+        overflow-x: hidden;
+    }
+    
+
+    .Noticiasunidas
+    {
+        margin-top:0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: right;
+        text-align: left;
     }
 
-    /*Tamñao de la letra de las noticias*/
+    aside>.Titulo {
+        /* text-align: left;
+        position: relative;
+        left: -6%;
+        width: 50%; */
+        font-size: 3em;
+        color: #FF96D5;
+    }
+
     aside>ul {
         list-style: none;
         font-size: 1.2em;
         margin: 2em;
+        margin-top: -3em;
     }
+
+    aside > ul > li {
+        border: 2px solid #FF96D5; /* Borde de color diferente y más visible */
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-bottom: 0.5em;
+        background-color: rgba(209, 94, 187, 0.6); /* Fondo con una ligera opacidad */
+        color: #FFFFFF;  /* Texto blanco para alto contraste */
+    }
+    
 
     /*Color de las noticias y posición*/
-    .Noticia1, .Noticia2, .Noticia3, .Noticia4{
-        color:#FF96D5;
+    .Noticia1,
+    .Noticia2,
+    .Noticia3,
+    .Noticia4 {
+        color: #ffffff;
         text-decoration: none;
         display: flex;
+        border: 2px solid #5C1C4D;
+        border: none;
+        outline: none;
+        margin-bottom: 02em;
     }
+
     /*Marcar qué noticia está pisando el ratón*/
-    .Noticia1:hover, .Noticia2:hover, .Noticia3:hover, .Noticia4:hover{
-        color: #C9599c;
+    .Noticia1:hover,
+    .Noticia2:hover,
+    .Noticia3:hover,
+    .Noticia4:hover {
+        color: #e7a4cc;
         text-decoration: none;
     }
-/* --------------Footer------------- */
-    footer {
-        background-color: #5C1C4D;
-        color: white;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-        font-size: 0.8em;
-        margin-top: 12em;
-        height: 19em;
-        top: 110em;
-        left: 0%;
-        right: 0%;
-        position: absolute;
-    }
 
-    footer>div>h3 {
-        font-family: "Audiowide", serif;
-        text-align: center;
-        color: #FF96D5;
-        font-size: 1.17em;
-        font-weight: bold;
-    }
-
-    footer>div>nav>ul {
-        list-style: none;
-    }
-
-    .Redes {
-        display: flex;
-        width: 5%;
-    }
-
-    .Contacto {
-        display: flex;
-    }
+ /* ---------- Pie de pagina ------------- */
+ footer {
+    position: relative;
+    width: 100%;  /* Asegura que el footer ocupe todo el ancho */
+    background-color: #5C1C4D;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: 0.8em;
+    height: 21em;
+    margin-top: auto; /* Esto ayuda a que el footer se quede al final */
+    padding: 1em 0;  /* Asegura que no haya espacio extra dentro */
 }
+
+
+footer>div>h3 {
+    font-family: "Audiowide", serif;
+    text-align: center;
+    color: #FF96D5;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+footer>div>nav>ul {
+    list-style: none;
+}
+
+.Redes {
+    display: flex;
+    width: 5%;
+}
+
+.Contacto {
+    display: flex;
+}
+
+}
+
 
 /* -------------------  Media Queries   ---------------- */
 /* Moviles */
 @media (max-width: 86.875em) and (min-width: 20em) {
 
-    /* ---------- Elementos basicos (titulos, parrafos...) ---------------- */
-    html{
-        scrollbar-color: #FF96D5 #5C1C4D;
-    }
-    
-    body {
-        background-color: #0F1425;
-        overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4, p, a{
-        font-family: "Audiowide", serif;
-    }
-
     /* ----------------- Menu ----------------- */
-    .Menu {
-        font-family: "Audiowide", serif;
-        background-color: #5C1C4D;
-        position: fixed;
-        /*Menú fijo*/
-        top: 0%;
-        left: 0%;
-        right: 0%;
-        z-index: 1000;
-        /* Un valor alto para que esté por encima de otros elementos */
-    }
 
     /* Logo y elementos para aceeder a las otras paginas */
     .Menualineado {
@@ -299,18 +437,13 @@
 
     /* Cada elemento del menú (menos el logo)*/
     .Listamenu {
-        position: relative;
-        left: -5%;
-        text-decoration: none;
-        /*Quitar el subrayado*/
-        display: block;
         padding: 0.7em;
-        color: #FF96D5;
-        /*Color de la letra*/
-        width: 20%;
-        /* margin-left: -5'%; */
     }
 
+    /* Botones */
+    .Botonfuente{
+       display:none;
+    }
 
     /* ----------------- Elementos basicos ----------------- */
     .Fotoprincipal {
@@ -319,62 +452,66 @@
     }
 
     .Resenas {
-        color: #FF96D5; /*Color de la letra*/
         margin-top: 10em;
-    }
-
-    .Titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        position: relative;
-        width: 9em;
-        font-size: 3em;
-        left: 4%;
     }
 
-    h1{
-        background-color: #0F1425;
+    
+    /* Cambiamos su tamaño */
+    aside
+    {
+        width: 93%;
     }
 
-    article {
-        color: #0F1425; /*Color de la letra*/
-        background-color: #FF96D5;
-        width: 91%;
-        height: 9%;
-        position: relative;
-        padding: 1em;
-        margin: 2em;
-        left: -3%;
-    }
+    /* aside>ul>li>a {
+        border: 2px solid #c3b0bf;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-bottom: 0.5em;
+        margin-right:0.7em;
+    } */
 
-    aside {
-        background-color: #5B0749;
-        color: white;
-        position: relative;
-        width: 96%;
-        top: 1em;
-        margin-left: -69%;
+    .Noticia1,
+    .Noticia2,
+    .Noticia3,
+    .Noticia4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex-wrap: nowrap;
+        margin-bottom: 0.5em;
+        margin-right:2em;
+        font-size: 90%;
     }
-
-    aside>ul {
-        list-style: none;
-        font-size: 1.2em;
-        margin: 0em;
-    }
-
     /* ----------------- Footer ----------------- */
 
     footer {
         display: flex;
         flex-wrap: wrap;
-        height: 35em;
-        margin-top: 44.2%;
+        height: 50em; 
+        /* margin-top: 44.2%; */
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
+        /* margin-top:2em;  */
+        position:relative;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
+        width: 100%;
+        /* margin-top: -10%; */
     }
 
-    .PieIzq {
+
+    /* .PieIzq {
         margin-top: -2em;
-    }
+    } */
 
 }

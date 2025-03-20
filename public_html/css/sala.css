@@ -30,6 +30,14 @@
         animation: moverFondo 3600s  linear infinite; /* Animación infinita */
     }
 
+    body.Modoclaro{
+        overflow-x: hidden;
+        background-image: url('../Imagenes/fondoclaro.jpg'); /* Mantener la misma imagen de fondo */
+        background-repeat: repeat; /* Repetir la imagen */
+        background-size: 15em 15em; /* Mantener el tamaño de la imagen */
+        animation: moverFondo 3600s linear infinite; /* Mantener la misma animación */
+    }
+
     @keyframes moverFondo {
         from {
             background-position: 0 0; /* Punto de inicio */
@@ -60,13 +68,11 @@
     .Menu {
         font-family: "Audiowide", serif;
         background-color: #5C1C4D;
-        position: fixed;
-        /*Menú fijo*/
+        position: fixed;    /*Menú fijo*/
         top: 0%;
         left: 0%;
         right: 0%;
-        z-index: 1000;
-        /* Un valor alto para que esté por encima de otros elementos */
+        z-index: 1000;  /* Un valor alto para que esté por encima de otros elementos */
     }
 
     /* Logo y elementos para aceeder a las otras paginas */
@@ -84,8 +90,7 @@
     /* Elementos del menú para acceder a las otras paginas */
     .Listaunidamenu {
         display: flex;
-        list-style: none;
-        /* Para quitar los puntos de la lista */
+        list-style: none;   /* Para quitar los puntos de la lista */
         margin: 0;
         font-size: 1.4em;
     }
@@ -94,23 +99,21 @@
     .Listamenu {
         position: relative;
         left: -5%;
-        text-decoration: none;
-        /*Quitar el subrayado*/
+        text-decoration: none;  /*Quitar el subrayado*/
         display: block;
         padding: 1em;
-        color: #FF96D5;
-        /*Color de la letra*/
+        color: #FF96D5; /*Color de la letra*/
         width: 20%;
         margin-left: -20%;
         top: 5%;
     }
 
     .Listamenu:hover {
-        color: #C9599c;
+        color: #ebcddf;
         text-decoration: none;
     }
 
-    #tres {
+    #Reserva {
         background-color: #0F1425;
         border-radius: 50%;
         width: 70%;
@@ -118,8 +121,13 @@
         animation: parpadeo 1.5s linear infinite;
     }
 
-    #tres:hover {
+    #Reserva:hover {
         animation: none;
+    }
+
+    .Listamenu.activo {
+        color: #C9599c;
+        font-weight: bold; /* Para resaltar */
     }
 
     @keyframes parpadeo {
@@ -128,6 +136,23 @@
         }
     }
 
+    /* Contenedor del interruptor */
+    .Menualineado>button{
+        position: fixed;
+        top: 2.9%;
+        right: 1%;
+        z-index: 10000;
+        background-color: transparent;
+        border: none;
+        transition: transform 0.5s ease-in-out;
+        cursor: pointer;
+        transition: background 0.5s;
+        font-size: 1.5em;
+    }
+
+    body.Modoclaro h1, body.Modoclaro h2, body.Modoclaro #Cambio{
+        color: #5C1C4D;
+    }
 
     /* -------------- Botones ------------- */
 
@@ -136,20 +161,49 @@
         justify-content: center;
     }
 
-    button {
+    .Botoneslocalizacion>button {
         color: white;
-        background-color: #D15EBB;
-        border-color: #D15EBB;
+        background-color: #932F7D;
+        border-color: #932F7D;
         width: 10em;
         height: 2.5em;
         text-align: center;
         font-family: "Audiowide", serif;
     }
 
-    button:hover {
-        background-color: #bc55a9;
+    .Botoneslocalizacion>button:hover {
+        background-color: #762665;
     }
 
+    /* Boton para cambiar el tamaño de la letra */
+    .Botonfuente{
+        position: fixed;
+        bottom: 2em;
+        left:2em;
+        z-index: 100000;
+    }
+
+    .Botonfuente > button {
+        background-color: #932F7D; 
+        border-radius: 50em;
+        width: 4em;  
+        height: 4em; 
+        /* border: non e; */
+        border-color: #b44d8b ;
+        border-width: 0.2em;
+        color: white;
+        font-size: 1.2em;
+        font-weight: bold;  /* Esto pone el texto en negrita */
+        font-family: "Audiowide", serif;
+    }
+
+    .Botonfuente > button:hover {
+        background-color: #762665;
+    }
+
+    .Botonfuente > button:active {
+        background-color: #9f488f;
+    }
 
     /* ---------------- Carrusel --------------- */
 
@@ -169,7 +223,7 @@
         align-items: center;
         justify-content: center;
         line-height: 1.4em;
-        margin-bottom: 6em
+        margin-bottom: 6em;
     }
 
     .img {
@@ -181,7 +235,6 @@
         margin-top: -6em;
         margin-left: 4em;
         margin-right: 4em;
-        /* margin-bottom: 4em; */
         object-fit: cover;
         filter: saturate(175%);
     }
@@ -209,6 +262,7 @@
         font-weight: 300;
         font-size: 27px;
     }
+
 
     .texto p {
         align-items: center;
@@ -295,7 +349,7 @@
         display: none;
     }
 
-    .texto{
+    .texto a{
         text-decoration: none;
     }
     /* ----------------- Tabla de salas ---------------- */
@@ -305,23 +359,24 @@
         color: white;
         font-family: "Audiowide", serif;
         text-align: center;
-        border: 1px solid #FF96D5;
+        border: 1px solid #441739;
         margin-left: auto;
         margin-right: auto;
-        box-shadow: 10px 10px 5px 0px #5C1C4D;
+        box-shadow: 10px 10px 5px 0px #441739;
         /* margin-bottom:5em; */
+        margin-bottom:3em;
     }
 
     thead,
     th {
-        background-color: #c057ad;
+        background-color: #832a70;
         padding: 2em;
     }
 
     td {
-        border: 1px solid #FF96D5;
+        border: 1px solid #792667;
         padding: 2em;
-        background-color: #D15EBB;
+        background-color: #932F7D;
     }
 
     #ElPuerto
@@ -337,25 +392,26 @@
 
     /* ---------- Pie de pagina ------------- */
     footer {
-        font-family: "Audiowide", serif;
+        position: relative;
+        width: 100%;  /* Asegura que el footer ocupe todo el ancho */
         background-color: #5C1C4D;
         color: white;
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
         font-size: 0.8em;
-
-        margin-top: 25em;
-        /* height: 19em; */
-        height: 35%;
-        top: 135em;
-        left: 0%;
-        right: 0%;
-        position: absolute;
+        height: 19em;
+        margin-top: auto; /* Esto ayuda a que el footer se quede al final */
+        padding: 1em 0;  /* Asegura que no haya espacio extra dentro */
     }
+    
 
     footer>div>h3 {
+        font-family: "Audiowide", serif;
         text-align: center;
+        color: #FF96D5;
+        font-size: 1.17em;
+        font-weight: bold;
     }
 
     footer>div>nav>ul {
@@ -399,17 +455,6 @@
     }
     
     /* ----------------- Menu ----------------- */
-    .Menu {
-        font-family: "Audiowide", serif;
-        background-color: #5C1C4D;
-        position: fixed;
-        /*Menú fijo*/
-        top: 0%;
-        left: 0%;
-        right: 0%;
-        z-index: 1000;
-        /* Un valor alto para que esté por encima de otros elementos */
-    }
 
     /* Logo y elementos para aceeder a las otras paginas */
     .Menualineado {
@@ -448,16 +493,7 @@
 
     /* Cada elemento del menú (menos el logo)*/
     .Listamenu {
-        position: relative;
-        left: -5%;
-        text-decoration: none;
-        /*Quitar el subrayado*/
-        display: block;
         padding: 0.7em;
-        color: #FF96D5;
-        /*Color de la letra*/
-        width: 20%;
-        /* margin-left: -5'%; */
     }
 
 
@@ -476,6 +512,10 @@
         box-shadow: 10px 10px 5px 0px #5C1C4D;
     }
 
+    .Botonfuente
+    {
+        display:none;
+    }
     /* ----------------- Carrusel ----------------- */
 
     #img 
@@ -603,14 +643,14 @@
 
     table tr {
         /* border-bottom: 3px solid #000; */
-        border: 1px solid #FF96D5;
+        /* border: 1px solid #FF96D5; */
         display: block;
         margin-bottom: 1em;
     }
 
     table td {
         /* border-bottom: 1px solid #cd0b0b; */
-        border: 1px solid #FF96D5;
+        /* border: 1px solid #FF96D5; */
         display: block;
         font-size: 1em;
         text-align: center;
@@ -622,24 +662,28 @@
     }
 
     .Titulo {
-        background-color: #c04fab;
+        background-color: #832a70;
     }
 
     /* ----------------- Footer ----------------- */
-
     footer {
         display: flex;
         flex-wrap: wrap;
-        height: 50em;
-        margin-top: 120em;
+        height: 45em; 
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
+        position:relative;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
+        width: 100%;
+        margin-top: 3%;
     }
 
     .PieIzq {
         margin-top: -2em;
     }
-
 
 }
