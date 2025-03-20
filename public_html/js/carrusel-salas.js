@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function actualizarImagen() {
         imagen.innerHTML = `<img class="img" src="${imagenes[actual].url}" alt="logo pagina" loading="lazy", ></img>`;
         texto.innerHTML = `
-            <a href="#${imagenes[actual].sala}"><h3>${imagenes[actual].nombre}</h3></a>
+            <h3>${imagenes[actual].nombre}</h3>
             <p>${imagenes[actual].descripcion}</p>
         `;
         posicionCarrusel();
