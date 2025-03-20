@@ -10,7 +10,7 @@
     <meta name="designer" content="Juan José Acosta Rodriguez & Mari Carmen Letrán Andrades">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Cantame otra</title>
+    <title>Cántame otra - Información</title>
     <!-- Fuentes de letras -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,7 @@
     <link href="css/informacion.css" rel="stylesheet" type="text/css">
     <!-- JavaScript -->
     <script src="js/informacion.js"></script>
+    <script src="js/menu.js"></script>
     <!-- Favicono -->
     <link rel="icon" type="image/x-icon" href="/Imagenes/favicon.ico">
 </head>
@@ -31,30 +32,32 @@
         <div class="Menu">
             <div class="Menualineado">
                 <a href="index.html">
-                    <img class="Logo" src="Imagenes/logo3.png" alt="Logo" />
+                    <img class="Logo" src="Imagenes/logo3.png" alt="Logo de la empresa">
+
                 </a>
 
                 <nav>
                     <ul class="Listaunidamenu">
                         <li><a class="Listamenu" href="index.html" id="Inicio">Inicio</a></li>
                         <li><a class="Listamenu" href="sala.html">Salas</a></li>
-                        <li><a class="Listamenu" href="reserva.html" id="tres">Reserva</a></li>
+                        <li><a class="Listamenu" href="reserva.html" id="Reserva">Reserva</a></li>
                         <li><a class="Listamenu" href="informacion.html">Información</a></li>
                     </ul>
                 </nav>
+                <button id="Modo">🌙</button>
             </div>
         </div>
     </header>
     <div class="Union">
     <!-- Botón a sección de una página -->
     <a class="Imagen" href="informacion.html#Mapa">
-        <img class="Seccion" src="Imagenes/mapa.png" alt="Ubicación" />
+        <img class="Seccion" src="Imagenes/mapa.png" alt="Botón que nos lleva a la sección del mapa">
+
     </a>
     
     <!-- Descripción -->
     <div class="Foto">
-        <img src="Imagenes/Informacion.jpg" alt="Foto Cantando" width="700em" height="500em"
-            style="border: 20px; border-radius: 80px;" />
+        <img src="Imagenes/Informacion.jpg" alt="Foto de una mujer cantando" width="700" height="500" style="border: 20px; border-radius: 80px;">
     </div>
     <!-- Leer más -->
     <article class="Descripcion">
@@ -64,6 +67,10 @@
         <button id="LeerMas" onclick="Mas()">Leer más</button> 
     </article>
 </div>
+    <div class = "Botonfuente">
+        <button id="Aumentarfuente" >A+</button>
+        <button id="Disminuirfuente">A-</button>
+    </div>
     <!-- Bebidas disponible -->
     <div class="Bebidas">
         <h2>Nuestras Bebidas</h2>

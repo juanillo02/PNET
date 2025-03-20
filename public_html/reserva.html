@@ -10,7 +10,8 @@
     <meta name="designer" content="Juan José Acosta Rodriguez & Mari Carmen Letrán Andrades">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Cantame otra</title>
+    <title>Cántame otra - Reserva</title>
+
     <!-- Fuentes de letras -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +22,7 @@
     <link href="css/reserva.css" rel="stylesheet" type="text/css">
     <script src="js/validacion-formulario.js"></script>
     <script src="js/sweetalert2.all.js"></script>
+    <script src="js/menu.js"></script>
     <link rel="icon" type="image/x-icon" href="/Imagenes/favicon.ico">
 </head>
 
@@ -32,19 +34,25 @@
         <div class="Menu">
             <div class="Menualineado">
                 <a href="index.html">
-                    <img class="Logo" src="Imagenes/logo3.png" alt="" />
+                    <img class="Logo" src="Imagenes/logo3.png" alt="Logo de la empresa">
                 </a>
                 <nav>
                     <ul class="Listaunidamenu">
                         <li><a class="Listamenu" href="index.html" id="Inicio">Inicio</a></li>
                         <li><a class="Listamenu" href="sala.html">Salas</a></li>
-                        <li><a class="Listamenu" href="reserva.html" id="tres">Reserva</a></li>
+                        <li><a class="Listamenu" href="reserva.html" id="Reserva">Reserva</a></li>
                         <li><a class="Listamenu" href="informacion.html">Información</a></li>
                     </ul>
                 </nav>
+                <button id="Modo">🌙</button>
             </div>
         </div>
     </header>
+
+    <div class = "Botonfuente">
+        <button id="Aumentarfuente" >A+</button>
+        <button id="Disminuirfuente">A-</button>
+    </div>
 
     <!-- Titulos de la pagina -->
     <h1 class="TituloInicio">Reservas</h1>
@@ -52,7 +60,7 @@
 
 
     <!-- Botón para seleccionar el lugar donde queremos reservar las salas -->
-    <h3>Seleccione un lugar</h3>
+    <h3 class="Cambio">Seleccione un lugar</h3>
     <div class="Botoneslocalizacion">
         <button>Cádiz</button>
         <button>El Puerto</button>
@@ -64,27 +72,27 @@
         <div class="Rellenardatos">
             <!-- Input para escribir los datos del reservante -->
             <div class="Datospersonales">
-                <h3>Introduzca sus datos</h3>
+                <h3 class="Cambio">Introduzca sus datos</h3>
                 <div class="Error">
-                    <input required type="text" name="nombre" placeholder="Escriba su nombre y apellidos">
+                    <input required type="text" name="nombre" placeholder="Escriba su nombre y apellidos" aria-label="Nombe y apellidos">
                 </div>
                 <div class="Error">
-                    <input required type="email" name="email" placeholder="Escriba su email">
+                    <input required type="email" name="email" placeholder="Escriba su email" aria-label="Email">
                 </div>
                 <div class="Error">
-                    <input required type="tel" name="tel" placeholder="Escriba su teléfono">
+                    <input required type="tel" name="tel" placeholder="Escriba su teléfono" aria-label="Teléfono">
                 </div>
                 <div class="Error">
                     <input required type="number" name="numPersonas" placeholder="Escriba el número de asistentes"
-                        min="0">
+                        min="0" aria-label="Personas">
                 </div>
             </div>
 
             <!-- Seleccionar sala -->
             <div class="Seleccionarsala">
-                <h3>Seleccione una sala</h3>
+                <h3 class="Cambio">Seleccione una sala</h3>
                 <div class="Error" id = "sala">
-                    <select id="Seleccionarsala">
+                    <select id="Seleccionarsala" aria-label="Sala">
                         <option class="Cadiz">Sala Verano</option>
                         <option class="Cadiz">Sala Rock</option>
                         <option class="Cadiz">Sala Rosa</option>
@@ -100,13 +108,13 @@
 
             <!-- Calendario para seleccionar la fecha disponible -->
             <div class="Seleccionarfecha">
-                <h3>Seleccione una fecha</h3>
-                <input required type="date" name="fecha" id="calendario">
+                <h3 class="Cambio">Seleccione una fecha</h3>
+                <input required type="date" name="fecha" id="calendario" aria-label="Fecha">
             </div>
 
             <!-- Desplegable para seleccionar las horas disponibles en la sala y fecha seleccionadas anteriormente -->
             <div class="Seleccionarhorario">
-                <h3>Seleccione un horario</h3>
+                <h3 class="Cambio">Seleccione un horario</h3>
                 <div class="Horarioscheck">
                     <input type="checkbox" id="hora_1" name="hora" value="18:00-19:00">
                     <label for="hora_1">18:00-19:00</label><br>

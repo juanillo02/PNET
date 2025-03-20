@@ -10,7 +10,7 @@
     <meta name="designer" content="Juan José Acosta Rodriguez & Mari Carmen Letrán Andrades">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Cantame otra</title>
+    <title>Cántame - Salas</title>
     <!-- Fuentes de letras -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
     <link href="css/sala.css" rel="stylesheet" type="text/css">
     <script src="js/carrusel-salas.js"></script>
     <script src="js/tabla-salas.js"></script>
+    <script src="js/menu.js"></script>
 
     <link rel="icon" type="image/x-icon" href="/Imagenes/favicon.ico">
 </head>
@@ -33,20 +34,25 @@
         <div class="Menu">
             <div class="Menualineado">
                 <a href="index.html">
-                    <img class="Logo" src="Imagenes/logo3.png" alt="" />
+                    <img class="Logo" src="Imagenes/logo3.png" alt="Logo de la empresa">
                 </a>
                 <nav>
                     <ul class="Listaunidamenu">
                         <li><a class="Listamenu" href="index.html" id="Inicio">Inicio</a></li>
                         <li><a class="Listamenu" href="sala.html">Salas</a></li>
-                        <li><a class="Listamenu" href="reserva.html" id="tres">Reserva</a></li>
+                        <li><a class="Listamenu" href="reserva.html" id="Reserva">Reserva</a></li>
                         <li><a class="Listamenu" href="informacion.html">Información</a></li>
                     </ul>
                 </nav>
+                <button id="Modo">🌙</button>
             </div>
         </div>
     </header>
 
+    <div class = "Botonfuente">
+        <button id="Aumentarfuente" >A+</button>
+        <button id="Disminuirfuente">A-</button>
+    </div>
 
     <!-- Carrusel de salas -->
     <h1 class="TituloInicio">Nuestras salas</h1>
@@ -67,18 +73,19 @@
         <button>Sevilla</button>
     </div>
 
-    <h3>Desliza para ver más salas</h3>
+    <h3 id="Cambio">Desliza para ver más salas</h3>
     <h4>Para ver más detalles ¡PULSA!</h4>
     <!-- Fotos de salas -->
     <div class="Carrusel">
 
         <div class="atras">
-            <img id="atras" src="Imagenes/izquierda.png" alt="atras" loading="lazy">
+            <img id="atras" src="Imagenes/izquierda.png" alt="Botón para ir a la sala anterior" loading="lazy">
+
         </div>
 
         <div class="CarruselSala" id="CarruselSala">
             <div id="img">
-                <img src="Imagenes/salaverano.jpg" alt="Image 1" class="img">
+                <img src="Imagenes/salaverano.jpg" alt="Imagen de la sala" class="img">
             </div>
 
             <div class="texto" id="texto">
@@ -91,7 +98,7 @@
         </div>
 
         <div class="adelante">
-            <img id="adelante" src="Imagenes/derecha.png" alt="adelante" loading="lazy">
+            <img id="adelante" src="Imagenes/derecha.png" alt="Botón para ir a la siguiente sala" loading="lazy">
         </div>
     </div>
 

@@ -10,7 +10,7 @@
     <meta name="designer" content="Juan José Acosta Rodriguez & Mari Carmen Letrán Andrades">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Cantame otra</title>
+    <title>Cántame otra - Inicio</title>
     <!-- Fuentes de letras -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
     <link rel="icon" type="image/x-icon" href="/Imagenes/favicon.ico">
     <!-- JavaScript -->
     <script src="js/index.js"></script>
+    <script src="js/menu.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 </head>
 
@@ -32,33 +33,43 @@
         <div class="Menu">
             <div class="Menualineado">
                 <a href="index.html">
-                    <img class="Logo" src="Imagenes/logo3.png" alt="Logo" />
+                    <img class="Logo" src="Imagenes/logo3.png" alt="Logo de la empresa">
                 </a>
                 <nav>
                     <ul class="Listaunidamenu">
                         <li><a class="Listamenu" href="index.html" id="Inicio">Inicio</a></li>
                         <li><a class="Listamenu" href="sala.html">Salas</a></li>
-                        <li><a class="Listamenu" href="reserva.html" id="tres">Reserva</a></li>
+                        <li><a class="Listamenu" href="reserva.html" id="Reserva">Reserva</a></li>
                         <li><a class="Listamenu" href="informacion.html">Información</a></li>
                     </ul>
                 </nav>
+                <button id="Modo">🌙</button>
             </div>
         </div>
     </header>
 
+    <div class = "Botonfuente">
+        <button id="Aumentarfuente" >A+</button>
+        <button id="Disminuirfuente">A-</button>
+    </div>
 
     <!-- Foto de portada -->
     <div>
-        <img class="Fotoprincipal" src="Imagenes/Principal.png" alt="Foto principal" height="750" width="5000" />
+        <img class="Fotoprincipal" src="Imagenes/Principal.png" alt="Foto de micrófono con los colores principales de la página (rosa, azul y azul marino)" height="750" width="5000">
+
     </div>
 
 
     <!-- Reseñas: section compuesta por varios article y al final, un aside-->
     <section class="Resenas">
         <!-- Como la ñ es un caracter especial, usaremos &ntilde; -->
-        <h1 class="Titulo"> Nuestras rese&ntilde;as </h1>
-            <article class="Resena Resena1 visible">
-                <div>
+        <div >
+            <h1 class="Titulo"> Nuestras rese&ntilde;as </h1>
+            <button id="Parar" aria-label="Pausar animación">
+                <img id="iconoParar" src="Imagenes/play.png" alt="Pausar">
+            </button>
+            <article class="Resena Resena1 visible" >
+                <div >
                     <h3> Marta
                         <!-- Icono de estrella (se repite 5 veces para mostrar 5 estrellas) -->
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -298,6 +309,7 @@
                         es espectacular.</p>
                 </div>
             </article>
+        </div>
 
         <!-- Noticias: aside en el lado derecho de la web -->
         <aside class="Noticias">
@@ -308,19 +320,21 @@
                         href="https://www.mujerhoy.com/vivir/fitness/karaoke-ejercicio-ideal-calentamiento-mejorar-agilidad-juego-pies-desplazamiento-lateral-20250216082955-nt.html">Karaoke,
                         el ejercicio ideal de calentamiento para mejorar agilidad, juego de pies y desplazamiento
                         lateral</a>
-                    <img class="Noticia1" src="Imagenes/Noticia1.png" alt="Noticia1" height="200" width="200" />
+                        <img class="Noticia1" src="Imagenes/Noticia1.png" alt="Karaoke, el ejercicio ideal de calentamiento para mejorar agilidad, juego de pies y desplazamiento lateral" height="200" width="200" >
+
                 </li>
                 <li><a class="Noticia2"
                         href="https://www.msn.com/es-es/entretenimiento/musica/joe-crep%C3%BAsculo-el-karaoke-es-la-manera-definitiva-de-divertirse-en-grupo/ar-AA1yNDpH?ocid=BingNewsSerp">Joe
-                        Crepúsculo: 'El karaoke es la manera definitiva de divertirse en grupo'</a><img class="Noticia2"
-                        src="Imagenes/Noticia2.jpg" alt="Noticia2" height="200" width="300" /></li>
+                        Crepúsculo: 'El karaoke es la manera definitiva de divertirse en grupo'</a><img class="Noticia2" src="Imagenes/Noticia2.jpg" alt="Joe Crepúsculo: 'El karaoke es la manera definitiva de divertirse en grupo'" height="200" width="300" >
+                </li>
                 <li><a class="Noticia3" href="https://javivi-mr.github.io/CalculadO2/">Según CalculadO2, el karaoke
-                        reduce el CO2</a><img class="Noticia3" src="Imagenes/Noticia3.jpg" alt="Noticia3" height="200"
-                        width="200" /></li>
+                        reduce el CO2</a><img class="Noticia3" src="Imagenes/Noticia3.jpg" alt="Según CalculadO2, el karaoke reduce el CO2" height="200"
+                        width="200" >
+                </li>
                 <li><a class="Noticia4"
                         href="https://www.elespanol.com/alicante/cultura/musica/20250131/rigoberta-bandini-vuelve-benidorm-canta-karaoke-tema-ay-mama/920658471_0.html">Rigoberta
-                        Bandini vuelve a Benidorm y canta en un karaoke su tema 'Ay mamá'</a><img class="Noticia4"
-                        src="Imagenes/Noticia4.jpg" alt="Noticia4" height="150" width="300" /></li>
+                        Bandini vuelve a Benidorm y canta en un karaoke su tema 'Ay mamá'</a><img class="Noticia4" src="Imagenes/Noticia4.jpg" alt="Rigoberta Bandini vuelve a Benidorm y canta en un karaoke su tema 'Ay mamá'" height="150" width="300">
+                </li>
             </ul>
         </aside>
     </section>
