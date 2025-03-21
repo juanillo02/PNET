@@ -481,7 +481,7 @@ footer>div>nav>ul {
 
 
 /* Tablets: iPad Air, iPad Pro, Surface Pro 7, Surface Duo, Asus Zenbook Fold, Nest Hub, Nest Hub Max */
-@media (max-width: 1400px) and (min-width: 320px) {
+@media (max-width: 1400px) and (min-width: 500px) {
 
     /* ----------------- Elementos basicos ----------------- */
     .TituloInicio {
@@ -743,7 +743,8 @@ footer>div>nav>ul {
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
-        height: 47em;
+
+        height: 35em;
         position: relative;
     }
 
