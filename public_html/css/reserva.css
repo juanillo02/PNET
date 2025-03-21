@@ -416,7 +416,7 @@ footer>div>nav>ul {
 
 
 /* Tablets: iPad Air, iPad Pro, Surface Pro 7, Surface Duo, Asus Zenbook Fold, Nest Hub, Nest Hub Max */
-@media (max-width: 1400px) and (min-width: 500px) {
+@media (max-width: 1400px) and (min-width: 320px) {
 
     /* ----------------- Elementos basicos ----------------- */
     .TituloInicio {

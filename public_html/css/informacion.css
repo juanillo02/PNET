@@ -400,7 +400,7 @@ footer>div>nav>ul {
 
 
 /* Tablets: iPad Air, iPad Pro, Surface Pro 7, Surface Duo, Asus Zenbook Fold, Nest Hub, Nest Hub Max */
-@media (max-width: 1400px) and (min-width: 500px) {
+@media (max-width: 1400px) and (min-width: 320px) {
 
     /* ----------------- Menu ----------------- */
 
@@ -486,21 +486,21 @@ footer>div>nav>ul {
     }
 
     /* +++++++++++ Apartado de la carta de bebidas +++++++++++*/
-    .Bebidas {
+    /* .Bebidas {
         margin-right: 1em;
-    }
+    } */
 
     .Bebidas>h2 {
         width: 10em;
         position: relative;
-        left: 0.5em;
+        left: 1.2em;
         font-size: 1.3em;
         margin-top: 1em;
     }
 
     table {
         position: relative;
-        left: 4.5%;
+        left: 15.5%;
         width: 95%;
     }
 
@@ -521,7 +521,7 @@ footer>div>nav>ul {
     /* +++++++++++ Botones +++++++++++*/
     /* Cambiamos de sitio el boton para el mapa */
     .Seccion {
-        top: 24%;
+        top: 11%;
     }
 
     /* Desaparecemos los botones del tamaño de la fuente */
@@ -538,8 +538,7 @@ footer>div>nav>ul {
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
-
-        height: 35em;
+        height: 42em;
         position: relative;
     }
 
