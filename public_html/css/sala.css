@@ -1,62 +1,497 @@
-/* Ordenador */
+/* Version estandar, para ordenadores */
 
-@media screen and (max-width: 125em) {
+/* ----------------- Elementos basicos (titulos, parrafos...) -------------------- */
+html {
+    /* Cambiamos la barra de desplazamiento de color para que combine con la web */
+    scrollbar-color: #FF96D5 #5C1C4D;
+}
 
-    /* ---------- Elementos basicos (titulos, parrafos...) ---------------- */
-    h1,
-    h2,
-    h3 {
-        font-family: "Audiowide", serif;
-        text-align: center;
-        color: #FF96D5;
-        margin-top: 3em;
+/* ---------- Elementos basicos (titulos, parrafos...) ---------------- */
+h1, h2, h3 {
+    font-family: "Audiowide", serif;
+    text-align: center;
+    color: #FF96D5;
+    margin-top: 3em;
+}
+
+/* Esto corresponde al texto de la imagen en la version movil, por lo tanto lo ocultamos */
+h4, h5 {
+    display: none;
+}
+
+/* Elementos en modo claro */
+body.Modoclaro h1, body.Modoclaro h2, body.Modoclaro #Cambio, body.Modoclaro h4, body.Modoclaro h5 {
+    color: #5C1C4D;
+}
+
+
+.TituloInicio {
+    margin-top: 2.5em;
+    font-size: 3em;
+}
+
+body {
+    background-color: #0F1425;
+    /* No permitimos que se desplace a la derecha */
+    overflow-x: hidden;
+    /* Ponemos como fondo una imagen del micrófono */
+    background-image: url('../Imagenes/fondo.jpg');
+    background-repeat: repeat;
+    /* Ajusta el tamaño de las imágenes */
+    background-size: 15em 15em;
+    /* Animación infinita */
+    animation: moverFondo 3600s linear infinite;
+    /* Ponemos todos los elementos del body en columna */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cambios del body cuando se pulse el modo claro */
+body.Modoclaro {
+    /* Cambiamos la imagen de fondo */
+    background-image: url('../Imagenes/fondoclaro.jpg');
+    background-repeat: repeat;
+    background-size: 15em 15em;
+    animation: moverFondo 3600s linear infinite;
+}
+
+/* Animación para mover la imagen por el fondo */
+@keyframes moverFondo {
+    from {
+        /* Punto de inicio */
+        background-position: 0 0;
+        
     }
+    to {
+        /* Se mueve diagonalmente */
+        background-position: -10000em -10000em;
+        
+    }
+}
 
-    h4,h5 {display:none;}
+p {
+    color: white;
+    font-family: "Rubik", serif;
+    font-weight: 500;
+    font-style: normal;
+}
 
+.ParrafosWeb {
+    margin-left: 5em;
+    margin-right: 5em;
+    border: 2px solid #5C1C4D;
+    padding: 1em;
+    background-color: rgba(209, 94, 187, 0.8);
+    /* Color de fondo con opacidad */
+    box-shadow: 10px 10px 5px 0px #5C1C4D;
+}
+
+/* ----------------------------- Menu ------------------------- */
+.Menu {
+    font-family: "Audiowide", serif;
+     /* Añadimos un color al menu */
+     background-color: #5C1C4D;
+     /*Menú fijo en la parte de arriba. Usamos fixed para que al deslizar hacia abajo, se siga mostrando*/
+     position: fixed;
+     /* Lo pegamos a los bordes */
+     top: 0%;
+     left: 0%;
+     right: 0%;
+     /* Un valor alto para que esté por encima de otros elementos */
+     z-index: 1000;
+}
+
+/* Logo y elementos para acceder a las otras paginas */
+.Menualineado {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Imagen del menu (logo) */
+.Logo {
+    width: 18em;
+    height: 4.3em;
+}
+
+/* Elementos del menú para acceder a las otras paginas (inicio, reserva, salas, informacion) */
+.Listaunidamenu {
+    display: flex;
+    /* Para quitar los puntos de la lista */
+    list-style: none;
+    margin: 0;
+    font-size: 1.4em;
+}
+
+/* Cada elemento del menú (menos el logo)*/
+.Listamenu {
+    position: relative;
+    left: -5%;
+    /*Quitar el subrayado*/
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    /*Color de la letra*/
+    color: #FF96D5;
+    width: 20%;
+    margin-left: -20%;
+    top: 5%;
+}
+
+/*Cambiar el color cuando esté el ratón por encima*/
+.Listamenu:hover {
+    color: #ebcddf;
+}
+
+/*Circulo que rodea a reserva*/
+#Reserva {
+    background-color: #0F1425;
+    border-radius: 50%;
+    width: 70%;
+    height: 30%;
+    /*Realizar la animación con una duración de 1.5s que sea linear y nunca acabe*/
+    animation: parpadeo 1.5s linear infinite;
+}
+
+/*Parar la animación cuando el ratón está encima*/
+#Reserva:hover {
+    animation: none;
+}
+
+/* Esto hace el efecto de parpadeo que podrá ver en la página*/
+@keyframes parpadeo {
+    50% {
+        /*En la mitad del tiempo la opacidad será de 0*/
+        opacity: 0;
+    }
+}
+
+
+/* ----------------------------------- Botones ---------------------------- */
+/* Botones para elegir la localidad de las salas */
+.Botoneslocalizacion {
+    display: flex;
+    justify-content: center;
+}
+
+/* Cada uno de los botones */
+.Botoneslocalizacion>button {
+    color: white;
+    background-color: #932F7D;
+    border-color: #932F7D;
+    width: 10em;
+    height: 2.5em;
+    text-align: center;
+    font-family: "Audiowide", serif;
+}
+
+/* Cuando se pase por encima */
+.Botoneslocalizacion>button:hover {
+    background-color: #762665;
+}
+
+/* ++++++ Boton de modo claro y oscuro ++++++ */
+
+.Menualineado>button {
+    position: fixed;
+    top: 2.9%;
+    right: 1%;
+    z-index: 10000;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.5s ease-in-out;
+    /* Convierte el cursor en una mano */
+    cursor: pointer;
+    transition: background 0.5s;
+    font-size: 1.5em;
+}
+
+/* Cuando se pase por encima del boton */
+.Menualineado>button:hover {
+    opacity: 0.7;
+}
+
+/* ++++++ Botones de tamaño de letra ++++++ */
+
+/* Este contenedor contiene los 2 botones */
+.Botonfuente {
+    position: fixed;
+    bottom: 2em;
+    z-index: 100000;
+}
+
+/* Cada boton para cambiar la letra */
+.Botonfuente>button {
+    background-color: #932F7D;
+    border-radius: 50em;
+    width: 4em;
+    height: 4em;
+    border-color: #b44d8b;
+    border-width: 0.2em;
+    color: white;
+    font-size: 1.2em;
+    /* Esto pone el texto en negrita */
+    font-weight: bold;
+    font-family: "Audiowide", serif;
+}
+
+/* Cuando se pase por encima del boton */
+.Botonfuente>button:hover {
+    background-color: #762665;
+}
+
+/* Cuando se pulse el boton */
+.Botonfuente>button:active {
+    background-color: #9f488f;
+}
+
+
+/* ----------------------- Carrusel ------------------------ */
+/* Contenedor del carrusel de imagenes */
+.Carrusel {
+    /* Ponemos en una fila las imagenes con los botones para avanzar o retroceder */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    height: 50em;
+}
+
+/* Imagenes + texto de las salas */
+.CarruselSala {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4em;
+    margin-bottom: 6em;
+}
+
+/* Imagen de las salas */
+.img {
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.85);
+    height: 35em;
+    width: 60em;
+    border-radius: 15px;
+    margin-top: -6em;
+    margin-left: 4em;
+    margin-right: 4em;
+    object-fit: cover;
+    filter: saturate(175%);
+}
+
+/* Texto de las imagenes */
+.texto {
+    overflow: hidden;
+    position: absolute;
+    flex-direction: column;
+    /* transform: translateY(0px); */
+    top: 65em;
+    margin-bottom: 9px;
+    backdrop-filter: blur(20px);
+    background-color: rgba(63, 106, 138, 0.21);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.texto h3 {
+    text-shadow: 0px 0px 15px black;
+    /* padding-top: 40px; */
+    padding-bottom: 1.5em;
+    color: white;
+    font-weight: 300;
+    font-size: 27px;
+}
+
+
+.texto p {
+    align-items: center;
+    /* padding: 3em; */
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    color: white;
+    font-size: 0px;
+    font-weight: 300;
+    font-family: "Rubik", serif;
+    /* font-family: "Audiowide", serif; */
+    line-height: 1.2em;
+    margin-top: -1em;
+
+}
+
+.CarruselSala .texto {
+    width: 35em;
+    height: 6em;
+    transition: 1s;
+}
+
+.CarruselSala:hover .texto {
+    transition: height 1s, transform 1s, background-color 1s;
+    /* transform: translateY(-150px); */
+    transform: translateY(-25em);
+    height: 30em;
+    /* background-color: rgba(63, 106, 138, 0.71); */
+    background-color: rgba(205, 104, 193, 0.71);
+}
+
+.CarruselSala:hover .texto p {
+    transition: font-size 0s .2s linear;
+    font-size: 1.2em;
+    font-weight: 300;
+
+    text-shadow: 0px 0px 10px #000000;
+}
+
+/* Puntos para marcar en que imagen estamos del carrusel */
+.puntos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -13em;
+}
+
+.puntos p {
+    font-size: 100px;
+    font-weight: 500;
+    margin-top: -50px;
+    color: #FF96D5;
+}
+
+.puntos .bold {
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #e468b3;
+}
+
+.atras img {
+    width: 5em;
+    height: 5em;
+}
+
+.atras img:hover {
+    width: 5em;
+    height: 5em;
+    opacity: 0.7;
+}
+
+.adelante img {
+    width: 5em;
+    height: 5em;
+}
+
+.adelante img:hover {
+    width: 5em;
+    height: 5em;
+    opacity: 0.7;
+}
+
+/* Texto de las imagenes que se van a mostrar en el media query */
+.TextoMovil {
+    display: none;
+}
+
+.texto a {
+    text-decoration: none;
+}
+
+/* ----------------- Tabla de salas ---------------- */
+table {
+    border-collapse: collapse;
+    width: 70%;
+    color: white;
+    font-family: "Audiowide", serif;
+    text-align: center;
+    border: 1px solid #441739;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 5px 0px #441739;
+    /* margin-bottom:5em; */
+    margin-bottom: 3em;
+}
+
+thead,
+th {
+    background-color: #832a70;
+    padding: 2em;
+}
+
+td {
+    border: 1px solid #792667;
+    padding: 2em;
+    background-color: #932F7D;
+}
+
+#ElPuerto {
+    display: none;
+}
+
+#Sevilla {
+    display: none;
+}
+
+
+/* ---------- Pie de pagina ------------- */
+footer {
+    position: relative;
+    /* Asegura que el footer ocupe todo el ancho */
+    width: 100%;
+    background-color: #5C1C4D;
+    color: white;
+
+    /* Ponemos los elementos al final*/
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    font-size: 0.8em;
+    height: 21em;
+    /* Esto ayuda a que el footer se quede al final */
+    margin-top: auto;
+    padding: 1em 0;
+}
+
+/* Los titulos de cada apartado */
+footer>div>h3 {
+    font-family: "Audiowide", serif;
+    text-align: center;
+    color: #FF96D5;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+/* Quitamos los puntos de la lista del horario */
+footer>div>nav>ul {
+    list-style: none;
+}
+
+.Redes {
+    display: flex;
+    width: 5%;
+}
+
+.Contacto {
+    display: flex;
+}
+
+
+
+
+/* Tablets: iPad Air, iPad Pro, Surface Pro 7, Surface Duo, Asus Zenbook Fold, Nest Hub, Nest Hub Max */
+@media (max-width: 1400px) and (min-width: 500px) {
+
+    /* ----------------- Elementos basicos ----------------- */
     .TituloInicio {
-        margin-top: 3.5em;
-    }
-
-    body {
-        background-color: #0F1425;
-        overflow-x: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-image: url('../Imagenes/fondo.jpg'); /* Imagen del micrófono */
-        background-repeat: repeat; /* Repetir */
-        background-size: 15em 15em; /* Ajusta el tamaño de las imágenes */
-        animation: moverFondo 3600s  linear infinite; /* Animación infinita */
-    }
-
-    body.Modoclaro{
-        overflow-x: hidden;
-        background-image: url('../Imagenes/fondoclaro.jpg'); /* Mantener la misma imagen de fondo */
-        background-repeat: repeat; /* Repetir la imagen */
-        background-size: 15em 15em; /* Mantener el tamaño de la imagen */
-        animation: moverFondo 3600s linear infinite; /* Mantener la misma animación */
-    }
-
-    @keyframes moverFondo {
-        from {
-            background-position: 0 0; /* Punto de inicio */
-        }
-        to {
-            background-position: -10000em -10000em; /* Se mueve diagonalmente */
-        }
-    }
-
-    p {
-        color: white;
-        font-family: "Rubik", serif;
-        font-weight: 500;
-        font-style: normal;
+        margin-top: 3.2em;
+        font-size: 4em;
     }
 
     .ParrafosWeb {
-        margin-left: 5em;
-        margin-right: 5em;
+        margin-left: 1em;
+        margin-right: 1em;
         border: 2px solid #5C1C4D;
         padding: 1em;
         background-color: rgba(209, 94, 187, 0.8);
@@ -64,400 +499,37 @@
         box-shadow: 10px 10px 5px 0px #5C1C4D;
     }
 
-    /* ----------------- Menu ----------------- */
-    .Menu {
+    h4 {
         font-family: "Audiowide", serif;
-        background-color: #5C1C4D;
-        position: fixed;    /*Menú fijo*/
-        top: 0%;
-        left: 0%;
-        right: 0%;
-        z-index: 1000;  /* Un valor alto para que esté por encima de otros elementos */
-    }
-
-    /* Logo y elementos para aceeder a las otras paginas */
-    .Menualineado {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    /* Imagen del menu (logo) */
-    .Logo {
-        width: 18em;
-        height: 4.3em;
-    }
-
-    /* Elementos del menú para acceder a las otras paginas */
-    .Listaunidamenu {
-        display: flex;
-        list-style: none;   /* Para quitar los puntos de la lista */
-        margin: 0;
-        font-size: 1.4em;
-    }
-
-    /* Cada elemento del menú (menos el logo)*/
-    .Listamenu {
-        position: relative;
-        left: -5%;
-        text-decoration: none;  /*Quitar el subrayado*/
-        display: block;
-        padding: 1em;
-        color: #FF96D5; /*Color de la letra*/
-        width: 20%;
-        margin-left: -20%;
-        top: 5%;
-    }
-
-    .Listamenu:hover {
-        color: #ebcddf;
-        text-decoration: none;
-    }
-
-    #Reserva {
-        background-color: #0F1425;
-        border-radius: 50%;
-        width: 70%;
-        height: 30%;
-        animation: parpadeo 1.5s linear infinite;
-    }
-
-    #Reserva:hover {
-        animation: none;
-    }
-
-    .Listamenu.activo {
-        color: #C9599c;
-        font-weight: bold; /* Para resaltar */
-    }
-
-    @keyframes parpadeo {
-        50% {
-            opacity: 0;
-        }
-    }
-
-    /* Contenedor del interruptor */
-    .Menualineado>button{
-        position: fixed;
-        top: 2.9%;
-        right: 1%;
-        z-index: 10000;
-        background-color: transparent;
-        border: none;
-        transition: transform 0.5s ease-in-out;
-        cursor: pointer;
-        transition: background 0.5s;
-        font-size: 1.5em;
-    }
-
-    body.Modoclaro h1, body.Modoclaro h2, body.Modoclaro #Cambio{
-        color: #5C1C4D;
-    }
-
-    /* -------------- Botones ------------- */
-
-    .Botoneslocalizacion {
-        display: flex;
-        justify-content: center;
-    }
-
-    .Botoneslocalizacion>button {
-        color: white;
-        background-color: #932F7D;
-        border-color: #932F7D;
-        width: 10em;
-        height: 2.5em;
         text-align: center;
-        font-family: "Audiowide", serif;
-    }
-
-    .Botoneslocalizacion>button:hover {
-        background-color: #762665;
-    }
-
-    /* Boton para cambiar el tamaño de la letra */
-    .Botonfuente{
-        position: fixed;
-        bottom: 2em;
-        left:2em;
-        z-index: 100000;
-    }
-
-    .Botonfuente > button {
-        background-color: #932F7D; 
-        border-radius: 50em;
-        width: 4em;  
-        height: 4em; 
-        /* border: non e; */
-        border-color: #b44d8b ;
-        border-width: 0.2em;
-        color: white;
-        font-size: 1.2em;
-        font-weight: bold;  /* Esto pone el texto en negrita */
-        font-family: "Audiowide", serif;
-    }
-
-    .Botonfuente > button:hover {
-        background-color: #762665;
-    }
-
-    .Botonfuente > button:active {
-        background-color: #9f488f;
-    }
-
-    /* ---------------- Carrusel --------------- */
-
-    .Carrusel {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        overflow: hidden;
-        height: 50em;
-    }
-
-    .CarruselSala {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        line-height: 1.4em;
-        margin-bottom: 6em;
-    }
-
-    .img {
-        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.85);
-        height: 35em;
-        width: 60em;
-        border-radius: 15px;
-        /* margin: 5px; */
-        margin-top: -6em;
-        margin-left: 4em;
-        margin-right: 4em;
-        object-fit: cover;
-        filter: saturate(175%);
-    }
-
-    .texto {
-        overflow: hidden;
-        position: absolute;
-        flex-direction: column;
-        /* transform: translateY(0px); */
-        top: 65em;
-        margin-bottom: 9px;
-        backdrop-filter: blur(20px);
-        background-color: rgba(63, 106, 138, 0.21);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 30px;
-    }
-
-    .texto h3 {
-        text-shadow: 0px 0px 15px black;
-        /* padding-top: 40px; */
-        padding-bottom: 1.5em;
-        color: white;
-        font-weight: 300;
-        font-size: 27px;
-    }
-
-
-    .texto p {
-        align-items: center;
-        /* padding: 3em; */
-        padding-left: 2.3em;
-        padding-right: 2.3em;
-        color: white;
-        font-size: 0px;
-        font-weight: 300;
-        font-family: "Rubik", serif;
-        /* font-family: "Audiowide", serif; */
-        line-height: 1.2em;
-        margin-top: -1em;
-
-    }
-
-    .CarruselSala .texto {
-        width: 35em;
-        height: 6em;
-        transition: 1s;
-    }
-
-    .CarruselSala:hover .texto {
-        transition: height 1s, transform 1s, background-color 1s;
-        /* transform: translateY(-150px); */
-        transform: translateY(-25em);
-        height: 30em;
-        /* background-color: rgba(63, 106, 138, 0.71); */
-        background-color: rgba(205, 104, 193, 0.71);
-    }
-
-    .CarruselSala:hover .texto p {
-        transition: font-size 0s .2s linear;
-        font-size: 1.2em;
-        font-weight: 300;
-
-        text-shadow: 0px 0px 10px #000000;
-    }
-
-    .puntos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: -13em;
-    }
-
-    .puntos p {
-        font-size: 100px;
-        font-weight: 500;
-        margin-top: -50px;
         color: #FF96D5;
+        margin-top: 0.5em;
+        font-size: 0.8em;
+        margin-bottom: 0.5em;
+        display: block;
     }
 
-    .puntos .bold {
-        font-weight: 700;
-        margin-left: 10px;
-        margin-right: 10px;
-        color: #e468b3;
+    h5 {
+        font-family: "Audiowide", serif;
+        text-align: center;
+        color: #FF96D5;
+        margin-top: 0.5em;
+        font-size: 0.7em;
+        margin-bottom: -1.5em;
+        display: block;
     }
 
-    .atras img {
-        width: 5em;
-        height: 5em;
-    }
-
-    .atras img:hover {
-        width: 5em;
-        height: 5em;
-        opacity: 0.7;
-    }
-
-    .adelante img {
-        width: 5em;
-        height: 5em;
-    }
-
-    .adelante img:hover {
-        width: 5em;
-        height: 5em;
-        opacity: 0.7;
-    }
-
-    .TextoMovil {
+    /* +++++++++++ Botones +++++++++++*/
+    .Botonfuente {
+        /* Desaparecemos los botones del tamaño de la fuente */
         display: none;
     }
 
-    .texto a{
-        text-decoration: none;
-    }
-    /* ----------------- Tabla de salas ---------------- */
-    table {
-        border-collapse: collapse;
-        width: 70%;
-        color: white;
-        font-family: "Audiowide", serif;
-        text-align: center;
-        border: 1px solid #441739;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: 10px 10px 5px 0px #441739;
-        /* margin-bottom:5em; */
-        margin-bottom:3em;
-    }
-
-    thead,
-    th {
-        background-color: #832a70;
-        padding: 2em;
-    }
-
-    td {
-        border: 1px solid #792667;
-        padding: 2em;
-        background-color: #932F7D;
-    }
-
-    #ElPuerto
-    {
-        display:none;
-    }
-
-    #Sevilla
-    {
-        display:none;
-    }
-
-
-    /* ---------- Pie de pagina ------------- */
-    footer {
-        position: relative;
-        width: 100%;  /* Asegura que el footer ocupe todo el ancho */
-        background-color: #5C1C4D;
-        color: white;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-        font-size: 0.8em;
-        height: 19em;
-        margin-top: auto; /* Esto ayuda a que el footer se quede al final */
-        padding: 1em 0;  /* Asegura que no haya espacio extra dentro */
-    }
-    
-
-    footer>div>h3 {
-        font-family: "Audiowide", serif;
-        text-align: center;
-        color: #FF96D5;
-        font-size: 1.17em;
-        font-weight: bold;
-    }
-
-    footer>div>nav>ul {
-        list-style: none;
-    }
-
-    .Redes {
-        display: flex;
-        width: 5%;
-    }
-
-    .Contacto {
-        display: flex;
-    }
-
-}
-
-
-/* Moviles */
-@media (max-width: 86.125em) and (min-width: 20em) {
-
-    /*  */
-    h4{
-       font-family: "Audiowide", serif;
-        text-align: center;
-        color: #FF96D5;
-        margin-top: 0.5em; 
-        font-size: 0.8em;
-        margin-bottom: 0.5em;
-        display:block;
-    }
-    h5
-    {
-        font-family: "Audiowide", serif;
-        text-align: center;
-        color: #FF96D5;
-        margin-top: 0.5em; 
-        font-size: 0.7em;
-        margin-bottom: -1.5em;
-        display:block;
-    }
-    
     /* ----------------- Menu ----------------- */
 
-    /* Logo y elementos para aceeder a las otras paginas */
+    /* Logo y elementos para acceder a las otras paginas */
     .Menualineado {
+        /* Ponemos el logo y los apartados (sala, reserva e informacion) en columna */
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -481,12 +553,12 @@
 
     /* Elementos del menú para acceder a las otras paginas */
     .Listaunidamenu {
-        display: flex;
         list-style: none;
         font-size: 1.2em;
+        /* Ponemos los apartados(salas, reserva e informacion) en fila */
+        display: flex;
         flex-direction: row;
         align-items: flex-start;
-        /* margin-left: auto; */
         justify-content: center;
         margin-left: 1em;
     }
@@ -496,30 +568,11 @@
         padding: 0.7em;
     }
 
+    
 
-    /* ----------------- Elementos basicos ----------------- */
-    .TituloInicio {
-        margin-top: 5em;
-    }
-
-    .ParrafosWeb {
-        margin-left: 1em;
-        margin-right: 1em;
-        border: 2px solid #5C1C4D;
-        padding: 1em;
-        background-color: rgba(209, 94, 187, 0.8);
-        /* Color de fondo con opacidad */
-        box-shadow: 10px 10px 5px 0px #5C1C4D;
-    }
-
-    .Botonfuente
-    {
-        display:none;
-    }
     /* ----------------- Carrusel ----------------- */
 
-    #img 
-    {
+    #img {
         width: 100%;
         /* height: auto; */
 
@@ -527,8 +580,7 @@
         /* margin: 0 auto; */
     }
 
-    #img img 
-    {
+    #img img {
         width: 100%;
         height: auto;
         margin-left: -1%;
@@ -559,30 +611,27 @@
     }
 
 
-    .atras 
-    {
+    .atras {
         margin-right: 1em;
         margin-left: 0.5em;
         height: 10%;
         width: 30%;
     }
-    
+
     .atras img {
         margin-left: 15%;
         height: 4em;
         width: 4em;
     }
 
-    .adelante 
-    {
+    .adelante {
         margin-right: 1em;
         margin-left: -0.5em;
         height: 10%;
         width: 30%;
     }
 
-    .adelante img 
-    {
+    .adelante img {
         margin-left: 35%;
         height: 4em;
         width: 4em;
@@ -591,8 +640,8 @@
     .adelante img:hover,
     .atras img:hover {
         height: 4em;
-        width: 4em; 
-    } 
+        width: 4em;
+    }
 
     .puntos {
         display: none;
@@ -610,15 +659,27 @@
         background-color: rgba(209, 94, 187, 0.3);
         padding: 1em;
         border-radius: 5px;
-        display:block;
+        display: block;
     }
 
+
     .TextoMovil a {
-        text-decoration: none; 
+        text-decoration: none;
     }
-    
-    
-    
+
+    .Modoclaro .TextoMovil {
+        background-color: rgba(37, 32, 36, 0.3);
+    }
+
+    .Modoclaro .TextoMovil>p {
+        color: #0F1425;
+    }
+
+    .Modoclaro .TextoMovil>a>h3 {
+        color: #5C1C4D;
+    }
+
+
     /* ----------------- Tabla ----------------- */
 
     table {
@@ -657,7 +718,15 @@
         width: 100%;
     }
 
-    #Verano, #Rock, #Corazon, #Azul, #Futuro, #Bam, #Colores, #Roja, #Oscura{
+    #Verano,
+    #Rock,
+    #Corazon,
+    #Azul,
+    #Futuro,
+    #Bam,
+    #Colores,
+    #Roja,
+    #Oscura {
         scroll-margin-top: 10em;
     }
 
@@ -666,24 +735,17 @@
     }
 
     /* ----------------- Footer ----------------- */
+
     footer {
+        /* Ponemos los elementos con wrap para que se ajusten al tamaño de la pantalla */
         display: flex;
         flex-wrap: wrap;
-        height: 45em; 
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
-        position:relative;
-        left: 0%;
-        right: 0%;
-        top: 0%;
-        bottom: 0%;
-        width: 100%;
-        margin-top: 3%;
-    }
 
-    .PieIzq {
-        margin-top: -2em;
+        height: 35em;
+        position: relative;
     }
 
 }

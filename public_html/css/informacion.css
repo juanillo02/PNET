@@ -1,356 +1,412 @@
-@media (max-width: 125em) {
+/* Version estandar, para ordenadores */
 
-    /* ---------- Elementos basicos (titulos, parrafos...) ---------------- */
-    * {
-        box-sizing: border-box; /* Asegura que padding y border no aumenten el tamaño total */
-    }
+/* ----------------- Elementos basicos (titulos, parrafos...) -------------------- */
+* {
+    /* Asegura que padding y border no aumenten el tamaño total */
+    box-sizing: border-box;
     
-    html{
-        scrollbar-color: #FF96D5 #5C1C4D; /*Color de la barra*/
-        height: 100%;  /* Asegura que el cuerpo ocupe toda la altura de la ventana */
-    }
-    
+}
 
-    body {
-        background-color: #0F1425;
-        overflow-x: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        background-image: url('../Imagenes/fondo.jpg'); /* Imagen del micrófono */
-        background-repeat: repeat; /* Repetir */
-        background-size: 15em 15em; /* Ajusta el tamaño de las imágenes */
-        animation: moverFondo 3600s  linear infinite; /* Animación infinita */
-        flex-grow: 1;  /* Hace que el cuerpo crezca para llenar el espacio disponible */
-        height: 100%;  /* Asegura que el cuerpo ocupe toda la altura de la ventana */
-    }
+html {
+    /* Cambiamos la barra de desplazamiento de color para que combine con la web */
+    scrollbar-color: #FF96D5 #5C1C4D;
+}
 
-    body.Modoclaro{
-        overflow-x: hidden;
-        background-image: url('../Imagenes/fondoclaro.jpg'); /* Mantener la misma imagen de fondo */
-        background-repeat: repeat; /* Repetir la imagen */
-        background-size: 15em 15em; /* Mantener el tamaño de la imagen */
-        animation: moverFondo 3600s linear infinite; /* Mantener la misma animación */
-    }
-    
-    h2, h3, p{
-        font-family: "Audiowide", serif;
-    }
 
-    body.Modoclaro h2, body.Modoclaro .Descripcion>p{
-        color: #5C1C4D;
-    }
 
-    @keyframes moverFondo {
-        from {
-            background-position: 0 0; /* Punto de inicio */
-        }
-        to {
-            background-position: -10000em -10000em; /* Se mueve diagonalmente */
-        }
-    }
+body {
+    background-color: #0F1425;
+    /* No permitimos que se desplace a la derecha */
+    overflow-x: hidden;
+    /* Ponemos como fondo una imagen del micrófono */
+    background-image: url('../Imagenes/fondo.jpg');
+    background-repeat: repeat;
+    /* Ajusta el tamaño de las imágenes */
+    background-size: 15em 15em;
+    /* Animación infinita */
+    animation: moverFondo 3600s linear infinite;
+    /* Ponemos todos los elementos del body en columna */
+    display: flex;
+    flex-direction: column;
+}
 
-    /* ----------------- Menu ----------------- */
-    .Menu {
-        font-family: "Audiowide", serif;
-        background-color: #5C1C4D;
-        position: fixed; /*Menú fijo*/
-        top: 0%;
-        left: 0%;
-        right: 0%;
-        z-index: 1000; /* Un valor alto para que esté por encima de otros elementos */
-    }
+/* Cambios del body cuando se pulse el modo claro */
+body.Modoclaro {
+    /* Cambiamos la imagen de fondo */
+    background-image: url('../Imagenes/fondoclaro.jpg');
+    background-repeat: repeat;
+    background-size: 15em 15em;
+    animation: moverFondo 3600s linear infinite;
+}
 
-    /* Logo y elementos para aceeder a las otras paginas */
-    .Menualineado {
-        display: flex;
-        justify-content: space-between;
-    }
+h2, h3, p {
+    font-family: "Audiowide", serif;
+}
 
-    /* Imagen del menu (logo) */
-    .Logo {
-        width: 18em;
-        height: 4.3em;
-    }
+/* Cambios el color cuando se pulsa el modo claro */
+body.Modoclaro h2, body.Modoclaro .Descripcion>p, body.Modoclaro .Mapa>div>h2 {
+    color: #5C1C4D;
+}
 
-    /* Elementos del menú para acceder a las otras paginas */
-    .Listaunidamenu {
-        display: flex;
-        list-style: none; /* Para quitar los puntos de la lista */
-        margin: 0;
-        font-size: 1.4em;
+/* Animación para mover la imagen por el fondo */
+@keyframes moverFondo {
+    from {
+        /* Punto de inicio */
+        background-position: 0 0;
+        
     }
+    to {
+        /* Se mueve diagonalmente */
+        background-position: -10000em -10000em;
+        
+    }
+}
 
-    /* Cada elemento del menú (menos el logo)*/
-    .Listamenu {
-        position: relative;
-        left: -5%;
-        text-decoration: none; /*Quitar el subrayado*/
-        display: block;
-        padding: 1em;
-        color: #FF96D5; /*Color de la letra*/
-        width: 20%;
-        margin-left: -20%;
-        top: 5%;
-    }
+/* ----------------- Menu ----------------- */
+.Menu {
+    font-family: "Audiowide", serif;
+    /* Añadimos un color al menu */
+    background-color: #5C1C4D;
+    /*Menú fijo en la parte de arriba. Usamos fixed para que al deslizar hacia abajo, se siga mostrando*/
+    position: fixed;
+    /* Lo pegamos a los bordes */
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    /* Un valor alto para que esté por encima de otros elementos */
+    z-index: 1000;
+}
 
-    .Listamenu:hover {
-        color: #ebcddf;
-        text-decoration: none;
-    }
+/* Logo y elementos para acceder a las otras paginas */
+.Menualineado {
+    display: flex;
+    justify-content: space-between;
+}
 
-    #Reserva {
-        background-color: #0F1425;
-        border-radius: 50%;
-        width: 100%;
-        height: 90%;
-        animation: parpadeo 1.5s linear infinite;
-    }
+/* Imagen del menu (logo) */
+.Logo {
+    width: 18em;
+    height: 4.3em;
+}
 
-    #Reserva:hover {
-        animation: none;
-    }
+/* Elementos del menú para acceder a las otras paginas (inicio, reserva, salas, informacion) */
+.Listaunidamenu {
+    display: flex;
+    /* Para quitar los puntos de la lista */
+    list-style: none;
+    margin: 0;
+    font-size: 1.4em;
+}
 
-    .Listamenu.activo {
-        color: #C9599c;
-        font-weight: bold; /* Para resaltar */
-    }
+/* Cada elemento del menú (menos el logo)*/
+.Listamenu {
+    position: relative;
+    left: -5%;
+    /*Quitar el subrayado*/
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    /*Color de la letra*/
+    color: #FF96D5;
+    width: 20%;
+    margin-left: -20%;
+    top: 5%;
+}
 
-    @keyframes parpadeo {
-        50% {
-            opacity: 0;
-        }
-    }
+/*Cambiar el color cuando esté el ratón por encima*/
+.Listamenu:hover {
+    color: #ebcddf;
+}
 
-    /* Contenedor del interruptor */
-    .Menualineado>button{
-        position: fixed;
-        top: 2.9%;
-        right: 1%;
-        z-index: 10000;
-        background-color: transparent;
-        border: none;
-        transition: transform 0.5s ease-in-out;
-        cursor: pointer;
-        transition: background 0.5s;
-        font-size: 1.5em;
-    }
+/*Circulo que rodea a reserva*/
+#Reserva {
+    background-color: #0F1425;
+    border-radius: 50%;
+    width: 100%;
+    height: 90%;
+    /*Realizar la animación con una duración de 1.5s que sea linear y nunca acabe*/
+    animation: parpadeo 1.5s linear infinite;
+}
 
-    /* ----------------- Elementos basicos ----------------- */
-    /*Botón hacia la sección de mapas*/
-    .Seccion{
-        color:#5C1C4D;
-        position: fixed;
-        background-color: #C9599c;
-        border-radius: 50em;
-        width: 4em;
-        height: 4em;
-        right: 1em;
-        z-index: 10000;
-        top: 13%;
-    }
+/*Parar la animación cuando el ratón está encima*/
+#Reserva:hover {
+    animation: none;
+}
 
-    /* Boton para cambiar el tamaño de la letra */
-    .Botonfuente{
-        position: fixed;
-        bottom: 2em;
-        z-index: 100000;
-    }
+.Listamenu.activo {
+    color: #C9599c;
+    font-weight: bold;
+    /* Para resaltar */
+}
 
-    .Botonfuente > button {
-        background-color: #932F7D; 
-        border-radius: 50em;
-        width: 4em;  
-        height: 4em; 
-        /* border: non e; */
-        border-color: #b44d8b ;
-        border-width: 0.2em;
-        color: white;
-        font-size: 1.2em;
-        font-weight: bold;  /* Esto pone el texto en negrita */
-        font-family: "Audiowide", serif;
+/* Esto hace el efecto de parpadeo que podrá ver en la página*/
+@keyframes parpadeo {
+    50% {
+        /*En la mitad del tiempo la opacidad será de 0*/
+        opacity: 0;
     }
+}
 
-    .Botonfuente > button:hover {
-        background-color: #762665;
-    }
+/* ----------------------------------- Botones ---------------------------- */
+/* ++++++ Boton de modo claro y oscuro ++++++ */
 
-    .Botonfuente > button:active {
-        background-color: #9f488f;
-    }
+.Menualineado>button {
+    position: fixed;
+    top: 2.9%;
+    right: 1%;
+    z-index: 10000;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.5s ease-in-out;
+    /* Convierte el cursor en una mano */
+    cursor: pointer;
+    transition: background 0.5s;
+    font-size: 1.5em;
+}
 
-    /*Foto de principal de la página*/
-    .Foto{
-        margin-top: 10%;
-        margin-left: -3%;
-    }
+/* Cuando se pase por encima del boton */
+.Menualineado>button:hover {
+    opacity: 0.7;
+}
 
-    .Union{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: flex-start;
-    }
-    /*Texto de información*/
-    .Descripcion{
-        color: #FF96D5;
-        font-size: 2em;
-        margin-top: 12%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 20em;
-        margin-left: 1em;
-        margin-right: 1.5em;
-    }
+/* ++++++ Botones de tamaño de letra ++++++ */
 
-    /*Información*/
-    .Descripcion>p{
-        font-size: 0.6em;
-        width: 26em;
-    }
-    
-    /*Botón leer más*/
-    #LeerMas{
-        font-family: "Audiowide", serif;
-        color: #FF96D5;
-        font-size: 0.5em;
-        background-color: #5C1C4D;
-        position: relative;
-        right: 3em;
-        border-radius: 15em;
-        padding: 1em;
-        margin: 1em;
-    }
+/* Este contenedor contiene los 2 botones */
+.Botonfuente {
+    position: fixed;
+    bottom: 2em;
+    z-index: 100000;
+}
 
-    /*Ratón por encima*/
-    #LeerMas:hover {
-        color: #C9599c;
-        text-decoration: none;
-    }
+/* Cada boton para cambiar la letra */
+.Botonfuente>button {
+    background-color: #932F7D;
+    border-radius: 50em;
+    width: 4em;
+    height: 4em;
+    border-color: #b44d8b;
+    border-width: 0.2em;
+    color: white;
+    font-size: 1.2em;
+    /* Esto pone el texto en negrita */
+    font-weight: bold;
+    font-family: "Audiowide", serif;
+}
 
-    /*Tabla de bebidas*/
-    .Bebidas {
-        font-family: "Audiowide", serif;
-        color: #FF96D5;
-        text-align: center;
-        font-size: 2em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;  /* Centra los elementos verticalmente */
-        margin-top: 8%;
-        padding: 0 1em;  /* Añade un poco de padding para evitar que los elementos toquen los bordes */
-        width: 100%;
-        margin-left: -1em;
-    }
-    
-    .Bebidas > h2 {
-        width: 100%; /* Ajusta el h2 al tamaño disponible */
-        font-size: 1.3em;
-        margin: 0;  /* Elimina márgenes innecesarios */
-        text-align: center;
-        margin-bottom:0.5em;
-    }
-    
+/* Cuando se pase por encima del boton */
+.Botonfuente>button:hover {
+    background-color: #762665;
+}
 
-    table{
-        border-collapse: collapse;
-        border: 0.3em solid #5C1C4D;
-        /* position: relative; */
-        /* left: 15em; */
-        background-color: #0F1425;
-        /* width: 100%;  */
-        margin: 0;  /* Elimina márgenes innecesarios */
-        text-align: center;
-    }
+/* Cuando se pulse el boton */
+.Botonfuente>button:active {
+    background-color: #9f488f;
+}
 
-    body.Modoclaro table{
-        background-color: white;
-        color: #5C1C4D;
-    }
-    
-    th, td{
-        padding: 0.5em;
-        text-align: left;
-    }
+/* ++++++ Botón hacia la sección de mapas ++++++ */
+.Seccion {
+    color: #5C1C4D;
+    position: fixed;
+    background-color: #C9599c;
+    border-radius: 50em;
+    width: 4em;
+    height: 4em;
+    right: 1em;
+    z-index: 10000;
+    top: 13%;
+}
 
-    .Mapa{
-        margin-top: 4em;
-        display: flex;
-        /* justify-content: space-around; */
-        scroll-margin-top: 5em;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        justify-content: center;  /* Centra los elementos verticalmente */
-        padding: 0 1em;  /* Añade un poco de padding para evitar que los elementos toquen los bordes */
+/* ------------------------- Elementos del body ----------------------- */
+/*Foto de principal de la página*/
+.Foto {
+    margin-top: 10%;
+    margin-left: -3%;
+}
 
-    }
+.Union {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
 
-    .Mapa>div>h2{
-        color: #FF96D5;
-        text-align: center;
-        font-size: 2em;
-        /* position: relative; */
-        width: 7em;
-        /* left: 100em; */
-        margin-bottom:0.5em;
-        width: 100%; /* Ajusta el h2 al tamaño disponible */ 
-    }
+/*Texto de información*/
+.Descripcion {
+    color: #FF96D5;
+    font-size: 2em;
+    margin-top: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20em;
+    margin-left: 1em;
+    margin-right: 1.5em;
+}
 
-    .Mapa>div{
-        margin-right:1em; 
-        margin-bottom:6em;
-    }
+/*Información*/
+.Descripcion>p {
+    font-size: 0.6em;
+    width: 26em;
+}
 
-    /* ---------- Pie de pagina ------------- */
-    footer {
-        position: relative;
-        width: 100%;  /* Asegura que el footer ocupe todo el ancho */
-        background-color: #5C1C4D;
-        color: white;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-        font-size: 0.8em;
-        height: 21em;
-        margin-top: auto; /* Esto ayuda a que el footer se quede al final */
-        padding: 1em 0;  /* Asegura que no haya espacio extra dentro */
-    }
-    
+/*Botón leer más*/
+#LeerMas {
+    font-family: "Audiowide", serif;
+    color: #FF96D5;
+    font-size: 0.5em;
+    background-color: #5C1C4D;
+    position: relative;
+    right: 3em;
+    border-radius: 15em;
+    padding: 1em;
+    margin: 1em;
+}
 
-    footer>div>h3 {
-        font-family: "Audiowide", serif;
-        text-align: center;
-        color: #FF96D5;
-        font-size: 1.17em;
-        font-weight: bold;
-    }
+/*Ratón por encima*/
+#LeerMas:hover {
+    color: #C9599c;
+    text-decoration: none;
+}
 
-    footer>div>nav>ul {
-        list-style: none;
-    }
+/*Tabla de bebidas*/
+.Bebidas {
+    font-family: "Audiowide", serif;
+    color: #FF96D5;
+    text-align: center;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Centra los elementos verticalmente */
+    margin-top: 8%;
+    padding: 0 1em;
+    /* Añade un poco de padding para evitar que los elementos toquen los bordes */
+    width: 100%;
+    margin-left: -1em;
+}
 
-    .Redes {
-        display: flex;
-        width: 5%;
-    }
+.Bebidas>h2 {
+    width: 100%;
+    /* Ajusta el h2 al tamaño disponible */
+    font-size: 1.3em;
+    margin: 0;
+    /* Elimina márgenes innecesarios */
+    text-align: center;
+    margin-bottom: 0.5em;
+}
 
-    .Contacto {
-        display: flex;
-    }
+
+table {
+    border-collapse: collapse;
+    border: 0.3em solid #5C1C4D;
+    /* position: relative; */
+    /* left: 15em; */
+    background-color: #0F1425;
+    /* width: 100%;  */
+    margin: 0;
+    /* Elimina márgenes innecesarios */
+    text-align: center;
+}
+
+body.Modoclaro table {
+    background-color: white;
+    color: #5C1C4D;
+}
+
+th,
+td {
+    padding: 0.5em;
+    text-align: left;
+}
+
+.Mapa {
+    margin-top: 4em;
+    display: flex;
+    /* justify-content: space-around; */
+    scroll-margin-top: 5em;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    /* Centra los elementos verticalmente */
+    padding: 0 1em;
+    /* Añade un poco de padding para evitar que los elementos toquen los bordes */
 
 }
 
-/* -------------------  Media Queries   ---------------- */
-/* Moviles */
-@media (max-width: 86.875em) and (min-width: 20em) {
+.Mapa>div {
+    margin-right: 1em;
+    margin-bottom: 6em;
+}
+
+.Mapa>div>h2 {
+    color: #FF96D5;
+    text-align: center;
+    font-size: 2em;
+    /* position: relative; */
+    width: 7em;
+    /* left: 100em; */
+    margin-bottom: 0.5em;
+    width: 100%;
+    /* Ajusta el h2 al tamaño disponible */
+}
+
+
+
+/* ---------- Pie de pagina ------------- */
+footer {
+    position: relative;
+    /* Asegura que el footer ocupe todo el ancho */
+    width: 100%;
+    background-color: #5C1C4D;
+    color: white;
+
+    /* Ponemos los elementos al final*/
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    font-size: 0.8em;
+    height: 21em;
+    /* Esto ayuda a que el footer se quede al final */
+    margin-top: auto;
+    padding: 1em 0;
+}
+
+/* Los titulos de cada apartado */
+footer>div>h3 {
+    font-family: "Audiowide", serif;
+    text-align: center;
+    color: #FF96D5;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+/* Quitamos los puntos de la lista del horario */
+footer>div>nav>ul {
+    list-style: none;
+}
+
+.Redes {
+    display: flex;
+    width: 5%;
+}
+
+.Contacto {
+    display: flex;
+}
+
+
+
+/* Tablets: iPad Air, iPad Pro, Surface Pro 7, Surface Duo, Asus Zenbook Fold, Nest Hub, Nest Hub Max */
+@media (max-width: 1400px) and (min-width: 500px) {
 
     /* ----------------- Menu ----------------- */
 
-    /* Logo y elementos para aceeder a las otras paginas */
-    .Menualineado {
+   /* Logo y elementos para acceder a las otras paginas */
+   .Menualineado {
+        /* Ponemos el logo y los apartados (sala, reserva e informacion) en columna */
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -374,9 +430,10 @@
 
     /* Elementos del menú para acceder a las otras paginas */
     .Listaunidamenu {
-        display: flex;
-        list-style: none;   /* Para quitar los puntos de la lista */
+        list-style: none;
         font-size: 1.2em;
+        /* Ponemos los apartados(salas, reserva e informacion) en fila */
+        display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
@@ -385,92 +442,69 @@
 
     /* Cada elemento del menú (menos el logo)*/
     .Listamenu {
-        position: relative;
-        left: -5%;
-        text-decoration: none;
-        /*Quitar el subrayado*/
-        display: block;
         padding: 0.7em;
-        color: #FF96D5;
-        /*Color de la letra*/
-        width: 20%;
-        /* margin-left: -5'%; */
     }
 
 
     /* ----------------- Elementos basicos ----------------- */
-    
-    .Seccion{
-        top: 24%;
-    }
-
-    .Botonfuente{
-        display:none;
-    }
-
-    .Foto{
+    /* Eliminar foto principal */
+    .Foto {
         display: none;
     }
 
-    .Imagen{
-        display: grid;
-        position: relative;
-        top: 10em;
-    }
+    /* +++++++++++ Texto de descripcion +++++++++++*/
 
-    .Descripcion{
+    /* Cambiamos la posicion de informacion*/
+    .Descripcion {
         margin-top: 5em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width:100%;
+        width: 100%;
         margin-left: 0.5em;
         margin-bottom: -1.5em;
-        
     }
 
-    .Descripcion>h2{
+    .Descripcion>h2 {
         width: 10em;
         position: relative;
         left: 0.1em;
-        font-size:1.4em;
+        font-size: 1.4em;
     }
 
-    .Descripcion>p{
+    .Descripcion>p {
         font-size: 0.7em;
         width: 19em;
         margin: 1.5em;
-        width:100%;
+        width: 100%;
         margin-left: 3.5em;
         margin-right: 2.5em;
     }
 
-    .Descripcion>button 
-    {
-        position:relative;
+    /* Leer mas */
+    .Descripcion>button {
+        position: relative;
         left: -0.5em;
-        width:50%;
+        width: 50%;
     }
 
-    .Bebidas{
-        margin-right:1em;
+    /* +++++++++++ Apartado de la carta de bebidas +++++++++++*/
+    .Bebidas {
+        margin-right: 1em;
     }
 
-    .Bebidas>h2{
+    .Bebidas>h2 {
         width: 10em;
         position: relative;
         left: 0.5em;
-        font-size:1.3em;
-        margin-top:1em;
+        font-size: 1.3em;
+        margin-top: 1em;
     }
 
-    table{
+    table {
         position: relative;
         left: 4.5%;
         width: 95%;
     }
-    
-    .Mapa{
+
+    .Mapa {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -478,35 +512,35 @@
         margin-bottom: 6em;
     }
 
-    .Mapa>div>iframe{
+    .Mapa>div>iframe {
         width: 100%;
         height: 100%;
         aspect-ratio: 1 / 1;
     }
 
-    /* ----------------- Footer ----------------- */
+    /* +++++++++++ Botones +++++++++++*/
+    /* Cambiamos de sitio el boton para el mapa */
+    .Seccion {
+        top: 24%;
+    }
 
+    /* Desaparecemos los botones del tamaño de la fuente */
+    .Botonfuente {
+        /* Desaparecemos los botones del tamaño de la fuente */
+        display: none;
+    }
+
+    /* ----------------- Footer ----------------- */
     footer {
+        /* Ponemos los elementos con wrap para que se ajusten al tamaño de la pantalla */
         display: flex;
         flex-wrap: wrap;
-        height: 45em; 
-        /* margin-top: 44.2%; */
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
-        /* margin-top:2em;  */
-        position:relative;
-        left: 0%;
-        right: 0%;
-        top: 0%;
-        bottom: 0%;
-        width: 100%;
-        margin-top: -6%;
 
-    }
-
-    .PieIzq {
-        margin-top: -2em;
+        height: 35em;
+        position: relative;
     }
 
 }
