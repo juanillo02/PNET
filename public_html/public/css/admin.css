@@ -1,0 +1,685 @@
+/* Version estandar, para ordenadores */
+
+/* ----------------- Elementos basicos (titulos, parrafos...) -------------------- */
+html {
+    /* Cambiamos la barra de desplazamiento de color para que combine con la web */
+    scrollbar-color: #FF96D5 #5C1C4D;
+}
+
+/* ---------- Elementos basicos (titulos, parrafos...) ---------------- */
+.Cuadro, h3
+{
+    font-family: "Luckiest Guy", serif;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-style: normal;
+}
+
+li 
+{
+    font-family: "Rubik", serif;
+}
+
+.Listaunidamenu>li, .Horario>li
+{
+    font-family: "Audiowide", serif;
+}
+
+h3 {
+    margin-top: 2.5em;
+    font-size: 1.5em;
+}
+
+.h2
+{
+    font-family: "Rubik", serif;
+    text-align: center;
+    color: white;
+    font-weight: 200;
+    font-style: normal;
+    font-size:1em;
+}
+
+strong
+{
+    color:#401135;
+}
+
+.Ventana>h2
+{
+    font-family: "Luckiest Guy", serif;
+    color:white;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 2.5em;
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos de la ventana emergente */
+
+/* Texto (h2) */
+.Cuadro {
+    margin-top: 1em;
+    border: 2px solid #5C1C4D;
+    padding: 0.5em;
+    background-color: rgba(209, 94, 187, 0.8);
+    box-shadow: 10px 10px 5px 0px #5C1C4D;
+    width: 65%;
+    /* Centrado horizontal */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.TituloInicio {
+    margin-top: 2.6em;
+    font-family: "Audiowide", serif;
+    text-align: center;
+    color: #FF96D5;
+    font-size: 3em;
+}
+
+body {
+    background-color: #0F1425;
+    /* No permitimos que se desplace a la derecha */
+    overflow-x: hidden;
+    /* Ponemos como fondo una imagen del micrófono */
+    background-image: url('../Imagenes/fondoAdmin.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background-repeat: repeat; */
+    /* Ajusta el tamaño de las imágenes */
+    /* background-size: 15em 15em; */
+    /* Animación infinita */
+    /* animation: moverFondo 3600s linear infinite; */
+    /* Ponemos todos los elementos del body en columna */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cambios del body cuando se pulse el modo claro */
+body.Modoclaro {
+    /* Cambiamos la imagen de fondo */
+    background-image: url('../Imagenes/fondoclaro.jpg');
+    background-repeat: repeat;
+    background-size: 15em 15em;
+    animation: moverFondo 3600s linear infinite;
+}
+
+/* Animación para mover la imagen por el fondo */
+@keyframes moverFondo {
+    from {
+        /* Punto de inicio */
+        background-position: 0 0;
+        
+    }
+    to {
+        /* Se mueve diagonalmente */
+        background-position: -10000em -10000em;
+        
+    }
+}
+
+.ParrafosWeb {
+    margin-left: 5em;
+    margin-right: 5em;
+    border: 2px solid #5C1C4D;
+    padding: 1em;
+    background-color: rgba(209, 94, 187, 0.8);
+    /* Color de fondo con opacidad */
+    box-shadow: 10px 10px 5px 0px #5C1C4D;
+}
+
+label {
+    color: white;
+    font-family: "Rubik", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* +++++ Elementos en modo claro +++++ */
+body.Modoclaro .Cambio,
+body.Modoclaro label,
+body.Modoclaro .TituloInicio {
+    color: #5C1C4D;
+}
+
+
+/* ----------------------------- Menu ------------------------- */
+.Menu {
+    font-family: "Audiowide", serif;
+     /* Añadimos un color al menu */
+     background-color: #5C1C4D;
+     /*Menú fijo en la parte de arriba. Usamos fixed para que al deslizar hacia abajo, se siga mostrando*/
+     position: fixed;
+     /* Lo pegamos a los bordes */
+     top: 0%;
+     left: 0%;
+     right: 0%;
+     /* Un valor alto para que esté por encima de otros elementos */
+     z-index: 1000;
+     
+}
+
+/* Logo y elementos para acceder a las otras paginas */
+.Menualineado {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Imagen del menu (logo) */
+.Logo {
+    width: 18em;
+    height: 4.3em;
+}
+
+/* Elementos del menú para acceder a las otras paginas (inicio, reserva, salas, informacion) */
+.Listaunidamenu {
+    display: flex;
+    /* Para quitar los puntos de la lista */
+    list-style: none;
+    margin: 0;
+    font-size: 1.4em;
+}
+
+/* Cada elemento del menú (menos el logo)*/
+.Listamenu {
+    position: relative;
+    left: -5%;
+    /*Quitar el subrayado*/
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    /*Color de la letra*/
+    color: #FF96D5;
+    width: 20%;
+    margin-left: -20%;
+    top: 5%;
+}
+
+/*Cambiar el color cuando esté el ratón por encima*/
+.Listamenu:hover {
+    color: #ebcddf;
+}
+
+/*Circulo que rodea a reserva*/
+#Reserva {
+    background-color: #0F1425;
+    border-radius: 50%;
+    width: 70%;
+    height: 30%;
+    /*Realizar la animación con una duración de 1.5s que sea linear y nunca acabe*/
+    animation: parpadeo 1.5s linear infinite;
+}
+
+/*Parar la animación cuando el ratón está encima*/
+#Reserva:hover {
+    animation: none;
+}
+
+/* Esto hace el efecto de parpadeo que podrá ver en la página*/
+@keyframes parpadeo {
+    50% {
+        /*En la mitad del tiempo la opacidad será de 0*/
+        opacity: 0;
+    }
+}
+/* ----------------------------------- Botones ---------------------------- */
+/* ++++++ Botones de tamaño de letra ++++++ */
+
+/* Este contenedor contiene los 2 botones */
+.Botonfuente {
+    position: fixed;
+    bottom: 2em;
+    z-index: 100000;
+}
+
+/* Cada boton para cambiar la letra */
+.Botonfuente>button {
+    background-color: #932F7D;
+    border-radius: 50em;
+    width: 4em;
+    height: 4em;
+    border-color: #b44d8b;
+    border-width: 0.2em;
+    color: white;
+    font-size: 1.2em;
+    /* Esto pone el texto en negrita */
+    font-weight: bold;
+    font-family: "Audiowide", serif;
+}
+
+/* Cuando se pase por encima del boton */
+.Botonfuente>button:hover {
+    background-color: #762665;
+}
+
+/* Cuando se pulse el boton */
+.Botonfuente>button:active {
+    background-color: #9f488f;
+}
+
+
+/* ++++++ Boton de modo claro y oscuro ++++++ */
+
+.Menualineado>button {
+    position: fixed;
+    /* top: 2.9%; */
+    right: -1%;
+    z-index: 10000;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.5s ease-in-out;
+    /* Convierte el cursor en una mano */
+    cursor: pointer;
+    transition: background 0.5s;
+    font-size: 1.5em;
+}
+
+/* Cuando se pase por encima del boton */
+.Menualineado>button:hover {
+    opacity: 0.7;
+}
+
+
+/* ---------- Administrador ------------- */
+.Botones
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; 
+    flex-wrap: wrap;
+    margin-top: 3em;
+    margin-bottom: 5em;
+}
+
+.Botones>button {
+    font-family: "Audiowide", serif;
+    background-color: #5C1C4D;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+}
+
+.Botones>button:hover {
+    background: #9e5a8f; /* Color más claro que #5c1c4d */
+    box-shadow: rgba(158, 90, 143, 0.4) 4px 4px, rgba(158, 90, 143, 0.3) 8px 8px, rgba(158, 90, 143, 0.2) 12px 12px, rgba(158, 90, 143, 0.1) 16px 16px, rgba(158, 90, 143, 0.05) 20px 20px; /* Sombra más clara */
+}
+
+.FuncionGet{
+    list-style: none;
+}
+
+.Ventana
+{
+    width: 50%;
+    max-height: 80vh; /* Permitimos que crezca hasta el 80% de la pantalla */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 2px solid #5C1C4D;
+    padding: 0.4em;
+    background-color: rgba(150, 64, 134, 1);
+    box-shadow: 10px 10px 5px 0px #5C1C4D;
+    overflow: hidden;
+}
+
+#resReservas {
+    max-height: 60vh; /* Ajusta el tamaño dinámicamente */
+    overflow-y: auto; /* Agrega desplazamiento si hay muchas reservas */
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.reserva-id {
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 2em;
+}
+
+.reserva-detalle {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 2em;
+    line-height: 1.5em;
+}
+
+.Formulario
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.Formulario>div>input
+{
+    width: 20em;
+    height: 3em;
+}
+
+.cerrar {
+    position: absolute;
+    top: 0.5em;
+    right: 0.625em;
+    font-size: 3em;
+    color: white;
+    cursor: pointer;
+
+}
+
+.cerrar:hover {
+    color: black;
+}
+/* ---------------- Rellenar datos (actualizar reserva) ------------------------ */
+.Rellenardatos {
+    /* Los ponemos en fila para tener 4 columnas separadas posteriormente */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.Datospersonales {
+    /* Los ponemos en columna */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Datospersonales>.Error>input {
+    padding: 1em;
+    width: 20em;
+    height: 2em;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.Seleccionarsala {
+    /* Los ponemos en columna */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cuando haya un error en la sala, se mostrara */
+.Seleccionarsala>.Error {
+    height: 4em;
+}
+
+.Seleccionarsala>.Error>select {
+    padding: 1em;
+    width: 20em;
+    height: 4em;
+    border-radius: 0.5em;
+}
+
+.Seleccionarfecha {
+    /* Los ponemos en columna */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.Seleccionarfecha>input {
+    padding: 1em;
+    width: 20em;
+    height: 2em;
+    border-radius: 0.5em;
+}
+
+.Seleccionarhorario {
+    /* Los ponemos en columna */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Horarioscheck>input {
+    margin-top: 0.7em;
+}
+
+
+/* ++++++ Botones para seleccionar localidad (El puerto, Cadiz o Sevilla) ++++++ */
+/* Conjunto de botones */
+.Botoneslocalizacion {
+    /* Centramos los botones */
+    display: flex;
+    justify-content: center;
+}
+
+/* Cada boton de localizacion */
+.Botoneslocalizacion>button {
+    color: white;
+    background-color: #932F7D;
+    border-color: #521545;
+    width: 8em;
+    height: 2.5em;
+    text-align: center;
+    font-family: "Audiowide", serif;
+}
+
+/* Cuando se pase por encima */
+.Botoneslocalizacion>button:hover {
+    background-color: #762665;
+}
+
+/* ++++++ Botones para aceptar la reserva ++++++ */
+
+#BuscarReserva, #ActualizarReserva, #guardarCambios, #EliminarReservaId, #Eliminar, #Aceptar {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    transition: .3s;
+    background: #4467C2;
+    cursor: pointer;
+    border-radius: 6px;
+    border-color: #809fed;
+    width: 13em;
+    height: 3em;
+    /* margin-top: -15em; */
+    margin-bottom: 3em;
+    font-family: "Audiowide", serif;
+}
+
+#BuscarReserva:hover, #ActualizarReserva:hover, #guardarCambios:hover, #EliminarReservaId:hover, #Eliminar:hover, #Aceptar:hover {
+    background: rgb(0, 102, 255);
+    /* Color al pasar el mouse */
+    box-shadow: rgba(0, 102, 255, 0.4) 4px 4px, rgba(0, 102, 255, 0.3) 8px 8px, rgba(0, 102, 255, 0.2) 12px 12px, rgba(0, 102, 255, 0.1) 16px 16px, rgba(0, 102, 255, 0.05) 20px 20px;
+}
+
+
+#resBusqueda, #resActualizar, #resEliminarId, #resEliminarTodas  {
+    max-height: 60vh; /* Ajusta el tamaño dinámicamente */
+    overflow-y: auto; /* Agrega desplazamiento si hay muchas reservas */
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/* ---------- Pie de pagina ------------- */
+footer {
+    position: relative;
+    /* Asegura que el footer ocupe todo el ancho */
+    width: 100%;
+    background-color: #5C1C4D;
+    color: white;
+
+    /* Ponemos los elementos al final*/
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    font-size: 0.8em;
+    height: 21em;
+    /* Esto ayuda a que el footer se quede al final */
+    margin-top: auto;
+    padding: 1em 0;
+
+    font-family: "Audiowide", serif;
+}
+
+/* Los titulos de cada apartado */
+footer>div>h3 {
+    font-family: "Audiowide", serif;
+    text-align: center;
+    color: #FF96D5;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+/* Quitamos los puntos de la lista del horario */
+footer>div>nav>ul {
+    list-style: none;
+}
+
+.Redes {
+    display: flex;
+    width: 5%;
+}
+
+.Contacto {
+    display: flex;
+}
+
+.Admin
+{
+    background-color: transparent;
+    border:none;
+    width: 3em;
+    height:3em;
+    font-size:3.5em;
+    text-decoration: none;
+}
+
+
+
+
+/* Tablets: iPad Air, iPad Pro, Surface Pro 7, Surface Duo, Asus Zenbook Fold, Nest Hub, Nest Hub Max */
+@media (max-width: 1400px) and (min-width: 500px) {
+
+    /* ----------------- Elementos basicos ----------------- */
+    .TituloInicio {
+        margin-top: 3.2em;
+        font-size: 4em;
+    }
+
+    /* h2 */
+    .Cuadro {
+        /* Lo centramos */
+        margin: 0 auto;
+    }
+
+    /* ----------------- Menu ----------------- */
+
+    /* Logo y elementos para acceder a las otras paginas */
+    .Menualineado {
+        /* Ponemos el logo y los apartados (sala, reserva e informacion) en columna */
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    /* Imagen del menu (logo) */
+    .Logo {
+        width: 15em;
+        height: 4em;
+        margin: 0 auto;
+        margin-top: 1em;
+        display: flex;
+        align-items: center;
+        padding: 0.5em;
+    }
+
+    /* Desaparecer apartado de inicio */
+    #Inicio {
+        display: none;
+    }
+
+    /* Elementos del menú para acceder a las otras paginas */
+    .Listaunidamenu {
+        list-style: none;
+        font-size: 1.2em;
+        /* Ponemos los apartados(salas, reserva e informacion) en fila */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 1em;
+    }
+
+    /* Cada elemento del menú (menos el logo)*/
+    .Listamenu {
+        padding: 0.7em;
+    }
+
+
+    /* ----------------- Rellenar datos ----------------- */
+    .Rellenardatos {
+        /* Los ponemos en fila con wrap para que se desp,zacen hacia el lado o abajo segun el tamaño de la pantalla */
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+
+    /* ----------------- Botones ----------------- */
+    .Botones
+    {
+        flex-direction: column;
+    }
+
+    .Botonfuente {
+        display: none;
+    }
+
+    /* ----------------- Footer ----------------- */
+
+    footer {
+        /* Ponemos los elementos con wrap para que se ajusten al tamaño de la pantalla */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+
+        height: 35em;
+        position: relative;
+    }
+
+}

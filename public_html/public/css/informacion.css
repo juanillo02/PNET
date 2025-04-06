@@ -1,0 +1,554 @@
+/* Version estandar, para ordenadores */
+
+/* ----------------- Elementos basicos (titulos, parrafos...) -------------------- */
+* {
+    /* Asegura que padding y border no aumenten el tamaño total */
+    box-sizing: border-box;
+    
+}
+
+html {
+    /* Cambiamos la barra de desplazamiento de color para que combine con la web */
+    scrollbar-color: #FF96D5 #5C1C4D;
+}
+
+
+
+body {
+    background-color: #0F1425;
+    /* No permitimos que se desplace a la derecha */
+    overflow-x: hidden;
+    /* Ponemos como fondo una imagen del micrófono */
+    background-image: url('../Imagenes/fondo.jpg');
+    background-repeat: repeat;
+    /* Ajusta el tamaño de las imágenes */
+    background-size: 15em 15em;
+    /* Animación infinita */
+    animation: moverFondo 3600s linear infinite;
+    /* Ponemos todos los elementos del body en columna */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cambios del body cuando se pulse el modo claro */
+body.Modoclaro {
+    /* Cambiamos la imagen de fondo */
+    background-image: url('../Imagenes/fondoclaro.jpg');
+    background-repeat: repeat;
+    background-size: 15em 15em;
+    animation: moverFondo 3600s linear infinite;
+}
+
+h2, h3, p {
+    font-family: "Audiowide", serif;
+}
+
+/* Cambios el color cuando se pulsa el modo claro */
+body.Modoclaro h2, body.Modoclaro .Descripcion>p, body.Modoclaro .Mapa>div>h2 {
+    color: #5C1C4D;
+}
+
+/* Animación para mover la imagen por el fondo */
+@keyframes moverFondo {
+    from {
+        /* Punto de inicio */
+        background-position: 0 0;
+        
+    }
+    to {
+        /* Se mueve diagonalmente */
+        background-position: -10000em -10000em;
+        
+    }
+}
+
+/* ----------------- Menu ----------------- */
+.Menu {
+    font-family: "Audiowide", serif;
+    /* Añadimos un color al menu */
+    background-color: #5C1C4D;
+    /*Menú fijo en la parte de arriba. Usamos fixed para que al deslizar hacia abajo, se siga mostrando*/
+    position: fixed;
+    /* Lo pegamos a los bordes */
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    /* Un valor alto para que esté por encima de otros elementos */
+    z-index: 1000;
+}
+
+/* Logo y elementos para acceder a las otras paginas */
+.Menualineado {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Imagen del menu (logo) */
+.Logo {
+    width: 18em;
+    height: 4.3em;
+}
+
+/* Elementos del menú para acceder a las otras paginas (inicio, reserva, salas, informacion) */
+.Listaunidamenu {
+    display: flex;
+    /* Para quitar los puntos de la lista */
+    list-style: none;
+    margin: 0;
+    font-size: 1.4em;
+}
+
+/* Cada elemento del menú (menos el logo)*/
+.Listamenu {
+    position: relative;
+    left: -5%;
+    /*Quitar el subrayado*/
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    /*Color de la letra*/
+    color: #FF96D5;
+    width: 20%;
+    margin-left: -20%;
+    top: 5%;
+}
+
+/*Cambiar el color cuando esté el ratón por encima*/
+.Listamenu:hover {
+    color: #ebcddf;
+}
+
+/*Circulo que rodea a reserva*/
+#Reserva {
+    background-color: #0F1425;
+    border-radius: 50%;
+    width: 100%;
+    height: 90%;
+    /*Realizar la animación con una duración de 1.5s que sea linear y nunca acabe*/
+    animation: parpadeo 1.5s linear infinite;
+}
+
+/*Parar la animación cuando el ratón está encima*/
+#Reserva:hover {
+    animation: none;
+}
+
+.Listamenu.activo {
+    color: #C9599c;
+    font-weight: bold;
+    /* Para resaltar */
+}
+
+/* Esto hace el efecto de parpadeo que podrá ver en la página*/
+@keyframes parpadeo {
+    50% {
+        /*En la mitad del tiempo la opacidad será de 0*/
+        opacity: 0;
+    }
+}
+
+/* ----------------------------------- Botones ---------------------------- */
+/* ++++++ Boton de modo claro y oscuro ++++++ */
+
+.Menualineado>button {
+    position: fixed;
+    top: 2.9%;
+    right: 1%;
+    z-index: 10000;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.5s ease-in-out;
+    /* Convierte el cursor en una mano */
+    cursor: pointer;
+    transition: background 0.5s;
+    font-size: 1.5em;
+}
+
+/* Cuando se pase por encima del boton */
+.Menualineado>button:hover {
+    opacity: 0.7;
+}
+
+/* ++++++ Botones de tamaño de letra ++++++ */
+
+/* Este contenedor contiene los 2 botones */
+.Botonfuente {
+    position: fixed;
+    bottom: 2em;
+    z-index: 100000;
+}
+
+/* Cada boton para cambiar la letra */
+.Botonfuente>button {
+    background-color: #932F7D;
+    border-radius: 50em;
+    width: 4em;
+    height: 4em;
+    border-color: #b44d8b;
+    border-width: 0.2em;
+    color: white;
+    font-size: 1.2em;
+    /* Esto pone el texto en negrita */
+    font-weight: bold;
+    font-family: "Audiowide", serif;
+}
+
+/* Cuando se pase por encima del boton */
+.Botonfuente>button:hover {
+    background-color: #762665;
+}
+
+/* Cuando se pulse el boton */
+.Botonfuente>button:active {
+    background-color: #9f488f;
+}
+
+/* ++++++ Botón hacia la sección de mapas ++++++ */
+.Seccion {
+    color: #5C1C4D;
+    position: fixed;
+    background-color: #C9599c;
+    border-radius: 50em;
+    width: 4em;
+    height: 4em;
+    right: 1em;
+    z-index: 10000;
+    top: 13%;
+}
+
+/* ------------------------- Elementos del body ----------------------- */
+/*Foto de principal de la página*/
+.Foto {
+    margin-top: 10%;
+    margin-left: -3%;
+}
+
+.Union {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+/*Texto de información*/
+.Descripcion {
+    color: #FF96D5;
+    font-size: 2em;
+    margin-top: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20em;
+    margin-left: 1em;
+    margin-right: 1.5em;
+}
+
+/*Información*/
+.Descripcion>p {
+    font-size: 0.6em;
+    width: 26em;
+}
+
+/*Botón leer más*/
+#LeerMas {
+    font-family: "Audiowide", serif;
+    color: #FF96D5;
+    font-size: 0.5em;
+    background-color: #5C1C4D;
+    position: relative;
+    right: 3em;
+    border-radius: 15em;
+    padding: 1em;
+    margin: 1em;
+}
+
+/*Ratón por encima*/
+#LeerMas:hover {
+    color: #C9599c;
+    text-decoration: none;
+}
+
+/*Tabla de bebidas*/
+.Bebidas {
+    font-family: "Audiowide", serif;
+    color: #FF96D5;
+    text-align: center;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Centra los elementos verticalmente */
+    margin-top: 8%;
+    padding: 0 1em;
+    /* Añade un poco de padding para evitar que los elementos toquen los bordes */
+    width: 100%;
+    margin-left: -1em;
+}
+
+.Bebidas>h2 {
+    width: 100%;
+    /* Ajusta el h2 al tamaño disponible */
+    font-size: 1.3em;
+    margin: 0;
+    /* Elimina márgenes innecesarios */
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+
+table {
+    border-collapse: collapse;
+    border: 0.3em solid #5C1C4D;
+    /* position: relative; */
+    /* left: 15em; */
+    background-color: #0F1425;
+    /* width: 100%;  */
+    margin: 0;
+    /* Elimina márgenes innecesarios */
+    text-align: center;
+}
+
+body.Modoclaro table {
+    background-color: white;
+    color: #5C1C4D;
+}
+
+th,
+td {
+    padding: 0.5em;
+    text-align: left;
+}
+
+.Mapa {
+    margin-top: 4em;
+    display: flex;
+    /* justify-content: space-around; */
+    scroll-margin-top: 5em;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    /* Centra los elementos verticalmente */
+    padding: 0 1em;
+    /* Añade un poco de padding para evitar que los elementos toquen los bordes */
+
+}
+
+.Mapa>div {
+    margin-right: 1em;
+    margin-bottom: 6em;
+}
+
+.Mapa>div>h2 {
+    color: #FF96D5;
+    text-align: center;
+    font-size: 2em;
+    /* position: relative; */
+    width: 7em;
+    /* left: 100em; */
+    margin-bottom: 0.5em;
+    width: 100%;
+    /* Ajusta el h2 al tamaño disponible */
+}
+
+
+
+/* ---------- Pie de pagina ------------- */
+footer {
+    position: relative;
+    /* Asegura que el footer ocupe todo el ancho */
+    width: 100%;
+    background-color: #5C1C4D;
+    color: white;
+
+    /* Ponemos los elementos al final*/
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    font-size: 0.8em;
+    height: 21em;
+    /* Esto ayuda a que el footer se quede al final */
+    margin-top: auto;
+    padding: 1em 0;
+}
+
+/* Los titulos de cada apartado */
+footer>div>h3 {
+    font-family: "Audiowide", serif;
+    text-align: center;
+    color: #FF96D5;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+/* Quitamos los puntos de la lista del horario */
+footer>div>nav>ul {
+    list-style: none;
+}
+
+.Redes {
+    display: flex;
+    width: 5%;
+}
+
+.Contacto {
+    display: flex;
+}
+
+.Admin
+{
+    background-color: transparent;
+    border:none;
+    width: 3em;
+    height:3em;
+    font-size:3.5em;
+    text-decoration: none;
+}
+
+/* Tablets: iPad Air, iPad Pro, Surface Pro 7, Surface Duo, Asus Zenbook Fold, Nest Hub, Nest Hub Max */
+@media (max-width: 1400px) and (min-width: 500px) {
+
+    /* ----------------- Menu ----------------- */
+
+   /* Logo y elementos para acceder a las otras paginas */
+   .Menualineado {
+        /* Ponemos el logo y los apartados (sala, reserva e informacion) en columna */
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    /* Imagen del menu (logo) */
+    .Logo {
+        width: 15em;
+        height: 4em;
+        margin: 0 auto;
+        margin-top: 1em;
+        display: flex;
+        align-items: center;
+        padding: 0.5em;
+    }
+
+    /* Desaparecer apartado de inicio */
+    #Inicio {
+        display: none;
+    }
+
+    /* Elementos del menú para acceder a las otras paginas */
+    .Listaunidamenu {
+        list-style: none;
+        font-size: 1.2em;
+        /* Ponemos los apartados(salas, reserva e informacion) en fila */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 1em;
+    }
+
+    /* Cada elemento del menú (menos el logo)*/
+    .Listamenu {
+        padding: 0.7em;
+    }
+
+
+    /* ----------------- Elementos basicos ----------------- */
+    /* Eliminar foto principal */
+    .Foto {
+        display: none;
+    }
+
+    /* +++++++++++ Texto de descripcion +++++++++++*/
+
+    /* Cambiamos la posicion de informacion*/
+    .Descripcion {
+        margin-top: 5em;
+        width: 100%;
+        margin-left: 0.5em;
+        margin-bottom: -1.5em;
+    }
+
+    .Descripcion>h2 {
+        width: 10em;
+        position: relative;
+        left: 0.1em;
+        font-size: 1.4em;
+    }
+
+    .Descripcion>p {
+        font-size: 0.7em;
+        width: 19em;
+        margin: 1.5em;
+        width: 100%;
+        margin-left: 3.5em;
+        margin-right: 2.5em;
+    }
+
+    /* Leer mas */
+    .Descripcion>button {
+        position: relative;
+        left: -0.5em;
+        width: 50%;
+    }
+
+    /* +++++++++++ Apartado de la carta de bebidas +++++++++++*/
+    .Bebidas {
+        margin-right: 1em;
+    }
+
+    .Bebidas>h2 {
+        width: 10em;
+        position: relative;
+        left: 0.5em;
+        font-size: 1.3em;
+        margin-top: 1em;
+    }
+
+    table {
+        position: relative;
+        left: 4.5%;
+        width: 95%;
+    }
+
+    .Mapa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
+        margin-bottom: 6em;
+    }
+
+    .Mapa>div>iframe {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* +++++++++++ Botones +++++++++++*/
+    /* Cambiamos de sitio el boton para el mapa */
+    .Seccion {
+        top: 24%;
+    }
+
+    /* Desaparecemos los botones del tamaño de la fuente */
+    .Botonfuente {
+        /* Desaparecemos los botones del tamaño de la fuente */
+        display: none;
+    }
+
+    /* ----------------- Footer ----------------- */
+    footer {
+        /* Ponemos los elementos con wrap para que se ajusten al tamaño de la pantalla */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+
+        height: 35em;
+        position: relative;
+    }
+
+}
