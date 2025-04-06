@@ -16,63 +16,10 @@ html {
     font-style: normal;
 }
 
-li 
-{
-    font-family: "Rubik", serif;
-}
-
-.Listaunidamenu>li, .Horario>li
-{
-    font-family: "Audiowide", serif;
-}
-
 h3 {
     margin-top: 2.5em;
     font-size: 1.5em;
 }
-
-.h2
-{
-    font-family: "Rubik", serif;
-    text-align: center;
-    color: white;
-    font-weight: 200;
-    font-style: normal;
-    font-size:1em;
-}
-
-strong
-{
-    color:#401135;
-}
-
-.Ventana>h2
-{
-    font-family: "Luckiest Guy", serif;
-    color:white;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2em;
-    text-align: center;
-    margin-top: 2.5em;
-}
-
-
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 10px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Estilos de la ventana emergente */
 
 /* Texto (h2) */
 .Cuadro {
@@ -101,14 +48,12 @@ body {
     /* No permitimos que se desplace a la derecha */
     overflow-x: hidden;
     /* Ponemos como fondo una imagen del micrófono */
-    background-image: url('../Imagenes/fondoAdmin.jpeg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    /* background-repeat: repeat; */
+    background-image: url('../Imagenes/fondo.jpg');
+    background-repeat: repeat;
     /* Ajusta el tamaño de las imágenes */
-    /* background-size: 15em 15em; */
+    background-size: 15em 15em;
     /* Animación infinita */
-    /* animation: moverFondo 3600s linear infinite; */
+    animation: moverFondo 3600s linear infinite;
     /* Ponemos todos los elementos del body en columna */
     display: flex;
     flex-direction: column;
@@ -165,17 +110,16 @@ body.Modoclaro .TituloInicio {
 /* ----------------------------- Menu ------------------------- */
 .Menu {
     font-family: "Audiowide", serif;
-     /* Añadimos un color al menu */
-     background-color: #5C1C4D;
-     /*Menú fijo en la parte de arriba. Usamos fixed para que al deslizar hacia abajo, se siga mostrando*/
-     position: fixed;
-     /* Lo pegamos a los bordes */
-     top: 0%;
-     left: 0%;
-     right: 0%;
-     /* Un valor alto para que esté por encima de otros elementos */
-     z-index: 1000;
-     
+    /* Añadimos un color al menu */
+    background-color: #5C1C4D;
+    /*Menú fijo en la parte de arriba. Usamos fixed para que al deslizar hacia abajo, se siga mostrando*/
+    position: fixed;
+    /* Lo pegamos a los bordes */
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    /* Un valor alto para que esté por encima de otros elementos */
+    z-index: 1000;
 }
 
 /* Logo y elementos para acceder a las otras paginas */
@@ -241,7 +185,77 @@ body.Modoclaro .TituloInicio {
         opacity: 0;
     }
 }
+
 /* ----------------------------------- Botones ---------------------------- */
+/* ++++++ Boton de modo claro y oscuro ++++++ */
+
+.Menualineado>button {
+    position: fixed;
+    top: 2.9%;
+    right: 1%;
+    z-index: 10000;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.5s ease-in-out;
+    /* Convierte el cursor en una mano */
+    cursor: pointer;
+    transition: background 0.5s;
+    font-size: 1.5em;
+}
+
+/* Cuando se pase por encima del boton */
+.Menualineado>button:hover {
+    opacity: 0.7;
+}
+
+
+/* ++++++ Botones para seleccionar localidad (El puerto, Cadiz o Sevilla) ++++++ */
+/* Conjunto de botones */
+.Botoneslocalizacion {
+    /* Centramos los botones */
+    display: flex;
+    justify-content: center;
+}
+
+/* Cada boton de localizacion */
+.Botoneslocalizacion>button {
+    color: white;
+    background-color: #932F7D;
+    border-color: #932F7D;
+    width: 10em;
+    height: 2.5em;
+    text-align: center;
+    font-family: "Audiowide", serif;
+}
+
+/* Cuando se pase por encima */
+.Botoneslocalizacion>button:hover {
+    background-color: #762665;
+}
+
+/* ++++++ Botones para aceptar la reserva ++++++ */
+#Aceptar {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    transition: .3s;
+    background: #4467C2;
+    cursor: pointer;
+    border-radius: 6px;
+    border-color: #809fed;
+    width: 13em;
+    height: 5em;
+    /* margin-top: -15em; */
+    margin-bottom: 3em;
+}
+
+#Aceptar:hover {
+    background: rgb(0, 102, 255);
+    /* Color al pasar el mouse */
+    box-shadow: rgba(0, 102, 255, 0.4) 4px 4px, rgba(0, 102, 255, 0.3) 8px 8px, rgba(0, 102, 255, 0.2) 12px 12px, rgba(0, 102, 255, 0.1) 16px 16px, rgba(0, 102, 255, 0.05) 20px 20px;
+}
+
 /* ++++++ Botones de tamaño de letra ++++++ */
 
 /* Este contenedor contiene los 2 botones */
@@ -277,131 +291,7 @@ body.Modoclaro .TituloInicio {
 }
 
 
-/* ++++++ Boton de modo claro y oscuro ++++++ */
-
-.Menualineado>button {
-    position: fixed;
-    /* top: 2.9%; */
-    right: -1%;
-    z-index: 10000;
-    background-color: transparent;
-    border: none;
-    transition: transform 0.5s ease-in-out;
-    /* Convierte el cursor en una mano */
-    cursor: pointer;
-    transition: background 0.5s;
-    font-size: 1.5em;
-}
-
-/* Cuando se pase por encima del boton */
-.Menualineado>button:hover {
-    opacity: 0.7;
-}
-
-
-/* ---------- Administrador ------------- */
-.Botones
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center; 
-    flex-wrap: wrap;
-    margin-top: 3em;
-    margin-bottom: 5em;
-}
-
-.Botones>button {
-    font-family: "Audiowide", serif;
-    background-color: #5C1C4D;
-    border: none;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-}
-
-.Botones>button:hover {
-    background: #9e5a8f; /* Color más claro que #5c1c4d */
-    box-shadow: rgba(158, 90, 143, 0.4) 4px 4px, rgba(158, 90, 143, 0.3) 8px 8px, rgba(158, 90, 143, 0.2) 12px 12px, rgba(158, 90, 143, 0.1) 16px 16px, rgba(158, 90, 143, 0.05) 20px 20px; /* Sombra más clara */
-}
-
-.FuncionGet{
-    list-style: none;
-}
-
-.Ventana
-{
-    width: 50%;
-    max-height: 80vh; /* Permitimos que crezca hasta el 80% de la pantalla */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border: 2px solid #5C1C4D;
-    padding: 0.4em;
-    background-color: rgba(150, 64, 134, 1);
-    box-shadow: 10px 10px 5px 0px #5C1C4D;
-    overflow: hidden;
-}
-
-#resReservas {
-    max-height: 60vh; /* Ajusta el tamaño dinámicamente */
-    overflow-y: auto; /* Agrega desplazamiento si hay muchas reservas */
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.reserva-id {
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 2em;
-}
-
-.reserva-detalle {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 5px;
-    margin-top: 5px;
-    margin-bottom: 2em;
-    line-height: 1.5em;
-}
-
-.Formulario
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-}
-
-.Formulario>div>input
-{
-    width: 20em;
-    height: 3em;
-}
-
-.cerrar {
-    position: absolute;
-    top: 0.5em;
-    right: 0.625em;
-    font-size: 3em;
-    color: white;
-    cursor: pointer;
-
-}
-
-.cerrar:hover {
-    color: black;
-}
-/* ---------------- Rellenar datos (actualizar reserva) ------------------------ */
+/* ----------------------------- Rellenar datos ------------------ */
 .Rellenardatos {
     /* Los ponemos en fila para tener 4 columnas separadas posteriormente */
     display: flex;
@@ -445,6 +335,13 @@ body.Modoclaro .TituloInicio {
     border-radius: 0.5em;
 }
 
+/* No mostramos las salas de los demas hasta que no se seleccionen, por defecto empezara en las de Cadiz */
+.ElPuerto,
+.Sevilla {
+    display: none;
+}
+
+
 .Seleccionarfecha {
     /* Los ponemos en columna */
     display: flex;
@@ -472,66 +369,6 @@ body.Modoclaro .TituloInicio {
 }
 
 
-/* ++++++ Botones para seleccionar localidad (El puerto, Cadiz o Sevilla) ++++++ */
-/* Conjunto de botones */
-.Botoneslocalizacion {
-    /* Centramos los botones */
-    display: flex;
-    justify-content: center;
-}
-
-/* Cada boton de localizacion */
-.Botoneslocalizacion>button {
-    color: white;
-    background-color: #932F7D;
-    border-color: #521545;
-    width: 8em;
-    height: 2.5em;
-    text-align: center;
-    font-family: "Audiowide", serif;
-}
-
-/* Cuando se pase por encima */
-.Botoneslocalizacion>button:hover {
-    background-color: #762665;
-}
-
-/* ++++++ Botones para aceptar la reserva ++++++ */
-
-#BuscarReserva, #ActualizarReserva, #guardarCambios, #EliminarReservaId, #Eliminar, #Aceptar {
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    position: relative;
-    transition: .3s;
-    background: #4467C2;
-    cursor: pointer;
-    border-radius: 6px;
-    border-color: #809fed;
-    width: 13em;
-    height: 3em;
-    /* margin-top: -15em; */
-    margin-bottom: 3em;
-    font-family: "Audiowide", serif;
-}
-
-#BuscarReserva:hover, #ActualizarReserva:hover, #guardarCambios:hover, #EliminarReservaId:hover, #Eliminar:hover, #Aceptar:hover {
-    background: rgb(0, 102, 255);
-    /* Color al pasar el mouse */
-    box-shadow: rgba(0, 102, 255, 0.4) 4px 4px, rgba(0, 102, 255, 0.3) 8px 8px, rgba(0, 102, 255, 0.2) 12px 12px, rgba(0, 102, 255, 0.1) 16px 16px, rgba(0, 102, 255, 0.05) 20px 20px;
-}
-
-
-#resBusqueda, #resActualizar, #resEliminarId, #resEliminarTodas  {
-    max-height: 60vh; /* Ajusta el tamaño dinámicamente */
-    overflow-y: auto; /* Agrega desplazamiento si hay muchas reservas */
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-}
-
-
 /* ---------- Pie de pagina ------------- */
 footer {
     position: relative;
@@ -550,8 +387,6 @@ footer {
     /* Esto ayuda a que el footer se quede al final */
     margin-top: auto;
     padding: 1em 0;
-
-    font-family: "Audiowide", serif;
 }
 
 /* Los titulos de cada apartado */
@@ -659,9 +494,9 @@ footer>div>nav>ul {
     }
 
     /* ----------------- Botones ----------------- */
-    .Botones
-    {
-        flex-direction: column;
+    #Aceptar {
+        margin-top: 4em;
+
     }
 
     .Botonfuente {
