@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<!--   HEAD   -->
+
+<head>
+    <meta name="keywords" content="karaoke, salas, musica">
+    <meta name="description" content="Official website JUMA">
+    <meta name="author" content="Juan José Acosta Rodriguez & Mari Carmen Letrán Andrades">
+    <meta name="designer" content="Juan José Acosta Rodriguez & Mari Carmen Letrán Andrades">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Cántame - Salas</title>
+    <!-- Fuentes de letras -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Luckiest+Guy&family=Poppins:wght@100;200;300;400;500&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <!-- Css -->
+    <link href="css/sala.css" rel="stylesheet" type="text/css">
+    <script src="js/carrusel-salas.js"></script>
+    <script src="js/tabla-salas.js"></script>
+    <script src="js/menu.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="/Imagenes/favicon.ico">
+</head>
+
+<!--   BODY   -->
+
+<body>
+    <!-- Menu principal superior -->
+    <header>
+        <div class="Menu">
+            <div class="Menualineado">
+                <a href="index.html">
+                    <img class="Logo" src="Imagenes/logo3.png" alt="Logo de la empresa">
+                </a>
+                <nav>
+                    <ul class="Listaunidamenu">
+                        <li><a class="Listamenu" href="index.html" id="Inicio">Inicio</a></li>
+                        <li><a class="Listamenu" href="sala.html">Salas</a></li>
+                        <li><a class="Listamenu" href="reserva.html" id="Reserva">Reserva</a></li>
+                        <li><a class="Listamenu" href="informacion.html">Información</a></li>
+                    </ul>
+                </nav>
+                <button id="Modo">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <div class = "Botonfuente">
+        <button id="Aumentarfuente" >A+</button>
+        <button id="Disminuirfuente">A-</button>
+    </div>
+
+    <!-- Carrusel de salas -->
+    <h1 class="TituloInicio">Nuestras salas</h1>
+    <div class="ParrafosWeb">
+        <p>En "Cántame Otra", nuestras instalaciones están diseñadas para ofrecerte una experiencia única de karaoke.
+            Cada
+            una de
+            nuestras salas está equipada con tecnología de última generación, micrófonos de alta calidad, y un sistema
+            de
+            sonido que hará que te sientas como una estrella. Además, el ambiente de nuestras instalaciones está pensado
+            para que disfrutes tanto en grupo como en pareja, creando momentos memorables en cada visita.</p>
+    </div>
+    <!-- Botón para seleccionar el lugar donde queremos ver las salas -->
+    <h2>Selecciona un lugar</h2>
+    <div class="Botoneslocalizacion">
+        <button>Cádiz</button>
+        <button>El Puerto</button>
+        <button>Sevilla</button>
+    </div>
+
+    <h3 id="Cambio">Desliza para ver más salas</h3>
+    <h4>Para ver más detalles ¡PULSA!</h4>
+    <!-- Fotos de salas -->
+    <div class="Carrusel">
+
+        <div class="atras">
+            <img id="atras" src="Imagenes/izquierda.png" alt="Botón para ir a la sala anterior" loading="lazy">
+
+        </div>
+
+        <div class="CarruselSala" id="CarruselSala">
+            <div id="img">
+                <img src="Imagenes/salaverano.jpg" alt="Imagen de la sala" class="img">
+            </div>
+
+            <div class="texto" id="texto">
+                <h3>Sala verano</h3>
+                <p>¡Bienvenido a la Sala Verano, el lugar perfecto para disfrutar del verano todo el año! Con un diseño
+                    fresco y luminoso, te sentirás como en un día soleado junto a la piscina. Relájate en cómodas
+                    hamacas, disfruta de luces LED y una decoración tropical mientras cantas tus canciones favoritas.
+                    ¡Reserva la Sala Verano y vive la fiesta!</p>
+            </div>
+        </div>
+
+        <div class="adelante">
+            <img id="adelante" src="Imagenes/derecha.png" alt="Botón para ir a la siguiente sala" loading="lazy">
+        </div>
+    </div>
+
+    <div class="puntos" id="puntos"></div>
+
+
+
+    <div class="ParrafosWeb">
+        <p>Cada una de nuestras salas tiene un estilo único, diseñado para adaptarse a diferentes gustos y ocasiones.
+            Desde
+            salas con un toque moderno y minimalista, hasta opciones más clásicas y acogedoras. Ya sea que estés
+            buscando
+            una experiencia íntima o una celebración animada, tenemos el ambiente perfecto para ti.</p>
+    </div>
+
+    <!-- Tabla -->
+
+    <h1>Detalles de salas</h1>
+    <div id="Cadiz">
+        <table>
+            <thead>
+                <tr>
+                    <th>Salas</th>
+                    <th>Capacidad</th>
+                    <th>Consumiciones</th>
+                    <th>Micrófonos</th>
+                    <th>Precio/hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="Verano" class="Titulo">Sala Verano</td>
+                    <td>4 personas</td>
+                    <td>2 bebidas/persona</td>
+                    <td>2 micrófonos</td>
+                    <td>10€/persona</td>
+                </tr>
+                <tr>
+                    <td id="Rock" class="Titulo">Sala Rock</td>
+                    <td>6 personas</td>
+                    <td>2 bebidas/persona</td>
+                    <td>4 micrófonos</td>
+                    <td>12€/persona</td>
+                </tr>
+                <tr>
+                    <td id="Corazon" class="Titulo">Sala Corazón</td>
+                    <td>25 personas</td>
+                    <td>2 bebidas/persona</td>
+                    <td>6 micrófonos</td>
+                    <td>14€/persona</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="ElPuerto">
+        <table>
+            <thead>
+                <tr>
+                    <th>Salas</th>
+                    <th>Capacidad</th>
+                    <th>Consumiciones</th>
+                    <th>Micrófonos</th>
+                    <th>Precio/hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="Azul" class="Titulo">Sala Azul</td>
+                    <td>20 personas</td>
+                    <td>2 bebidas/persona</td>
+                    <td>2 micrófonos</td>
+                    <td>10€/persona</td>
+                </tr>
+                <tr>
+                    <td id="Fururo" class="Titulo">Sala Futuro</td>
+                    <td>25 personas</td>
+                    <td>2 bebidas/persona</td>
+                    <td>4 micrófonos</td>
+                    <td>12€/persona</td>
+                </tr>
+                <tr>
+                    <td id="Bam" class="Titulo">Sala Bam</td>
+                    <td>10 personas</td>
+                    <td>2 bebidas/persona</td>
+                    <td>6 micrófonos</td>
+                    <td>14€/persona</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="Sevilla">
+        <table>
+            <thead>
+                <tr>
+                    <th>Salas</th>
+                    <th>Capacidad</th>
+                    <th>Consumiciones</th>
+                    <th>Micrófonos</th>
+                    <th>Precio/hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="Colores" class="Titulo">Sala Colores</td>
+                    <td>15 personas</td>
+                    <td>2 bebidas/persona</td>
+                    <td>2 micrófonos</td>
+                    <td>10€/persona</td>
+                </tr>
+                <tr>
+                    <td id="Roja" class="Titulo">Sala Roja</td>
+                    <td>15 personas</td>
+                    <td>2 bebidas/persona</td>
+                    <td>4 micrófonos</td>
+                    <td>12€/persona</td>
+                </tr>
+                <tr>
+                    <td id="Oscura" class="Titulo">Sala Oscura</td>
+                    <td>20 personas</td>
+                    <td>2 bebidas/persona</td>
+                    <td>6 micrófonos</td>
+                    <td>14€/persona</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--   FOOTER   -->
+    <footer>
+        <div class="PieIzq">
+            <!-- Horario -->
+            <h3>Horario</h3>
+            <nav>
+                <ul class="Horario">
+                    <li>
+                        <p>Lunes: - </p>
+                    </li>
+                    <li>
+                        <p>Martes: 18:00-04:00</p>
+                    </li>
+                    <li>
+                        <p>Miercoles: 18:00-04:00</p>
+                    </li>
+                    <li>
+                        <p>Jueves: 18:00-04:00</p>
+                    </li>
+                    <li>
+                        <p>Viernes: 18:00-04:00</p>
+                    </li>
+                    <li>
+                        <p>Sábado: 18:00-04:00</p>
+                    </li>
+                    <li>
+                        <p>Domingo: 18:00-04:00</p>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="PieDcho">
+            <!-- Redes sociales -->
+            <h3>Redes sociales</h3>
+            <nav>
+                <ul class="Redes">
+                    <li><a href="https://facebook.com/partytymekaraokee"><img src="Imagenes/Facebook.png"
+                                alt="Logo de Facebook" width="60" height="60"></a></li>
+                    <li><a href="https://x.com/Karaokes_"><img src="Imagenes/Twitter.png" alt="Logo de Twitter"
+                                width="60" height="60"></a></li>
+                    <li><a href="https://youtube.com/@partytymekaraokeenespanol7262?si=otVVQdNnxuU-o1Bv"><img
+                                src="Imagenes/Youtube.png" alt="Logo de Youtube" width="60" height="60"></a></li>
+                    <li><a href="https://instagram.com/partytymekaraoke"><img src="Imagenes/Instagram.png"
+                                alt="Logo de Instagram" width="60" height="60"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Contacto -->
+        <div>
+            <h3>Contacto</h3>
+            <nav>
+                <ul class="Contacto">
+                    <li><a href="tel:+34689257984"><img src="Imagenes/Teléfono.png" alt="Teléfono" width="70"
+                                height="80"></a></li>
+                    <li><a href="mailto:karaokescantame@cantameotra.es"><img src="Imagenes/Correo.png" alt="Correo"
+                                width="80" height="80"></a></li>
+                    <li><a href="#" class="Admin" id="Admin">👀</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+        <!-- Copyright -->
+        <p>&copy; Cántame Otra 2025</p>
+    </footer>
+</body>
+
+</html>
